@@ -28,6 +28,15 @@
 </nav>
 
 <script>
+
+    const COLLAPSE_WIDTH = 1080; // Make sure this matches the value above
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const sidenav = document.querySelector('.sidenav');
+    const main = document.querySelector('.main');
+
+    // Check width when page loads
+    document.addEventListener('DOMContentLoaded', checkWidth);
+
     var toggler = document.getElementsByClassName("caret");
     var i;
 
@@ -38,14 +47,22 @@
         });
     }
 
-    const toggleBtn = document.querySelector('.toggle-btn');
-    const sidenav = document.querySelector('.sidenav');
-    const main = document.querySelector('.main');
-
     toggleBtn.addEventListener('click', () => {
         sidenav.classList.toggle('collapsed');
         toggleBtn.classList.toggle('collapsed');
         main.classList.toggle('collapsed');
     });
+
+    function checkWidth() {
+        const toggleBtn = document.querySelector('.toggle-btn');
+        const sidenav = document.querySelector('.sidenav');
+        const main = document.querySelector('.main');
+
+        if (window.innerWidth < COLLAPSE_WIDTH) {
+            sidenav.classList.add('collapsed');
+            toggleBtn.classList.add('collapsed');
+            main.classList.add('collapsed');
+        }
+    }
 
 </script>

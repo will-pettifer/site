@@ -4,6 +4,7 @@
     --font-secondary: Bookerly, serif;
     --font-scale: 1em;
     --background-color: #192a40;
+    --background-color-trans: rgba(25, 42, 64, 0.9);
     --heading-color: #ffffff;
     --text-color: #ffffff;
     --link-color: #66a0ff;
@@ -35,14 +36,18 @@ body {
 .main {
     max-width: var(--width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 @media (max-width: 1280px) {
     .main {
         margin-left: 220px;
-        color: var(--link-color);
     }
     .main.collapsed {
+        margin: 0 auto;
+    }
+}
+@media (max-width: 1080px) {
+    .main {
         margin: 0 auto;
     }
 }
@@ -61,8 +66,9 @@ a:hover {
     bottom: 0;
     width: 200px;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 20px;
+    background-color: var(--background-color-trans);
 }
 .sidenav.collapsed {
     width: 0;
@@ -71,15 +77,16 @@ a:hover {
 
 .toggle-btn {
     position: fixed;
-    left: 190px; /* position it just outside the sidebar */
-    top: 10px;
+    border-radius: 100%;
+    left: 0;
+    top: 0;
     z-index: 2;
     color: var(--text-color);
     font-size: 20px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 20px;
+    padding: 3px 5px;
 
 }
 .toggle-btn:hover {
@@ -87,7 +94,7 @@ a:hover {
 }
 .toggle-btn.collapsed {
     left: 0;
-    transform: rotate(180deg);
+    transform: scaleX(-1);
 }
 
 
