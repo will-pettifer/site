@@ -1,0 +1,39 @@
+---
+
+---
+<head>
+    <style>
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            user-select: none;
+        }
+        a:hover {
+            color: var(--link-color);
+        }
+    </style>
+</head>
+<nav class="sidenav">
+    <a href="#">Home</a>
+    <ul id="myUL">
+        <li><span class="caret">Games</span>
+            <ul class="nested">
+                <li><a href="#">2D</a></li>
+                <li>Coffee</li>
+
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+</script>
