@@ -14,13 +14,13 @@
 }
 @font-face {
     font-family: 'Bookerly';
-    src: url('public/fonts/bookerly-regular.woff') format('woff');
+    src: url('/fonts/bookerly-regular.woff') format('woff');
     font-weight: 1;
     font-style: normal;
     font-display: swap;
 }
 body {
-    font-family: var(--font-secondary), serif;
+    font-family: var(--font-main), serif;
     font-size: var(--font-scale);
     margin: auto;
     padding: 20px;
@@ -69,13 +69,14 @@ ul, #myUL {
 }
 
 .caret::before {
-    content: "\25B6";
+    content: "🌿";
     display: inline-block;
     margin-right: 6px;
+    transform: rotate(60deg);
 }
 
 .caret-down::before {
-    transform: rotate(90deg);
+    transform: rotate(150deg);
 }
 
 .nested {
