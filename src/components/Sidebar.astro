@@ -13,8 +13,9 @@
         }
     </style>
 </head>
+<button class="toggle-btn"><-</button>
 <nav class="sidenav">
-    <a href="https://will-pett2.netlify.app/">Home</a>
+    <h1><a href="/">Home</a></h1>
     <ul id="myUL">
         <li><span class="caret">Games</span>
             <ul class="nested">
@@ -36,4 +37,15 @@
             this.classList.toggle("caret-down");
         });
     }
+
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const sidenav = document.querySelector('.sidenav');
+    const main = document.querySelector('.main');
+
+    toggleBtn.addEventListener('click', () => {
+        sidenav.classList.toggle('collapsed');
+        toggleBtn.classList.toggle('collapsed');
+        main.classList.toggle('collapsed');
+    });
+
 </script>

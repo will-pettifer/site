@@ -22,9 +22,8 @@
 body {
     font-family: var(--font-main), serif;
     font-size: var(--font-scale);
-    margin: auto;
-    padding: 20px;
-    max-width: var(--width);
+    margin: 0;
+    padding: 0;
     text-align: left;
     background-color: var(--background-color);
     word-wrap: break-word;
@@ -32,6 +31,22 @@ body {
     line-height: 1.5;
     color: var(--text-color);
 }
+
+.main {
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+@media (max-width: 1280px) {
+    .main {
+        margin-left: 220px;
+        color: var(--link-color);
+    }
+    .main.collapsed {
+        margin: 0 auto;
+    }
+}
+
 a {
     color: var(--link-color);
 }
@@ -49,6 +64,32 @@ a:hover {
     padding-top: 20px;
     padding-left: 20px;
 }
+.sidenav.collapsed {
+    width: 0;
+    padding-left: 0;
+}
+
+.toggle-btn {
+    position: fixed;
+    left: 190px; /* position it just outside the sidebar */
+    top: 10px;
+    z-index: 2;
+    color: var(--text-color);
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+
+}
+.toggle-btn:hover {
+    color: var(--link-color);
+}
+.toggle-btn.collapsed {
+    left: 0;
+    transform: rotate(180deg);
+}
+
 
 ul, #myUL {
     list-style-type: none;
