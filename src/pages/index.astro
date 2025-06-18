@@ -3,21 +3,10 @@ import {SITE_TITLE, SITE_DESCRIPTION} from "../consts";
 import BaseHead from "../components/BaseHead.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Footer from "../components/Footer.astro";
+import BaseLayout from "../components/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<title></title>
-	</head>
-	<body>
-		<Sidebar />
-		<div class="main">
-			<main>
-				<h1>Welcome! ☀️</h1>
-				hellohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-			</main>
-			<Footer />
-		</div>
-	</body>
-</html>
+<BaseLayout>
+	<h1>Welcome! ☀️</h1>
+	<p>Select a post from the sidebar to start reading.</p>
+</BaseLayout>

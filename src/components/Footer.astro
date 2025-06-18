@@ -1,7 +1,64 @@
 ---
+import {CV_ICON, CV_URL, GITHUB_ICON, GITHUB_URL, ITCH_ICON, ITCH_URL, LINKEDIN_ICON, LINKEDIN_URL} from "../consts";
 const today = new Date()
 ---
 <footer>
     &copy; {today.getFullYear()} William Pettifer. All rights reserved.
     <br> william.j.g.pettifer@gmail.com
+    <div class="social-links">
+        <a href={CV_URL} target="_blank">
+            <svg
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                    width="32"
+                    height="32"
+                    astro-icon="social/mastodon">
+                <path
+                    fill="currentColor"
+                    d={CV_ICON}>
+
+                </path>
+            </svg>
+        </a>
+        <a href={LINKEDIN_URL} target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32" astro-icon="social/twitter">
+                <path
+                    fill="currentColor"
+                    d={LINKEDIN_ICON}>
+                </path>
+            </svg>
+        </a>
+        <a href={ITCH_URL} target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32" astro-icon="social/github">
+                <path
+                    fill="currentColor"
+                    d={ITCH_ICON}>
+
+                </path>
+            </svg>
+        </a>
+        <a href={GITHUB_URL} target="_blank">
+            <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github">
+                <path
+                    fill="currentColor"
+                    d={GITHUB_ICON}>
+
+                </path>
+            </svg>
+        </a>
+    </div>
 </footer>
+<style>
+    a{
+        text-decoration: none;
+        color: var(--code-color);
+        letter-spacing: 1em;
+        line-height: 5em;
+    }
+    a:hover{
+        color: var(--link-color);
+    }
+    footer{
+        line-height: 2em;
+    }
+</style>

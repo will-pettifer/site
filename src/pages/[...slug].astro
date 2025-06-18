@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { getPosts } from '../content.loader';
+
+export async function getStaticPaths() {
+    const posts = await getPosts();
+    return posts.map(post => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={post.title}>
+    <article>
+        <h1>{post.title}</h1>
+        <aside>{post.date}</aside>
+        <Fragment set:html={post.body} />
+    </article>
+</BaseLayout>

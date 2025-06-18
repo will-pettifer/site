@@ -1,5 +1,5 @@
 :root {
-    --width: 800px;
+    --width: 720px;
     --font-main: Bookerly, serif;
     --font-secondary: Bookerly, serif;
     --font-scale: 1em;
@@ -13,16 +13,53 @@
     --code-color: #b69393;
     --blockquote-color: #ffffff;
 }
+
 @font-face {
     font-family: 'Bookerly';
-    src: url('/fonts/bookerly-regular.woff') format('woff');
-    font-weight: 1;
+    src: url('/fonts/Bookerly.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bookerly';
+    src: url('/fonts/Bookerly Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bookerly';
+    src: url('/fonts/Bookerly Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bookerly';
+    src: url('/fonts/Bookerly Bold Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bookerly';
+    src: url('/fonts/Bookerly Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Bookerly';
+    src: url('/fonts/Bookerly Light Italic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
     font-display: swap;
 }
 body {
     font-family: var(--font-main), serif;
     font-size: var(--font-scale);
+    font-weight: 400;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -38,15 +75,15 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1120px) {
     .main {
-        margin-left: 220px;
+        margin-left: 180px;
     }
     .main.collapsed {
         margin: 0 auto;
     }
 }
-@media (max-width: 1080px) {
+@media (max-width: 940px) {
     .main {
         margin: 0 auto;
     }
@@ -64,11 +101,11 @@ a:hover {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 200px;
+    width: 160px;
     overflow-x: hidden;
     padding-top: 40px;
     padding-left: 20px;
-    background-color: var(--background-color-trans);
+    background-color: var(--background-color);
 }
 .sidenav.collapsed {
     width: 0;
@@ -76,10 +113,10 @@ a:hover {
 }
 
 footer {
+    font-weight: 200;
     padding: 6em 0 0 0;
     text-align: center;
     color: var(--code-color);
-    font-size: 0.9em;
 }
 
 .toggle-btn {

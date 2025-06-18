@@ -1,5 +1,19 @@
 ---
+import {getPosts} from "../content.loader";
+const posts = await getPosts();
 
+const postsByCategory: Record<string, Array<{title: string, url: string}>> = {};
+posts.forEach(post => {
+    const parts = post.slug.split('/');
+    const category = parts.length > 1 ? parts[0] : 'Other';
+    if (!postsByCategory[category]) {
+        postsByCategory[category] = [];
+    }
+    postsByCategory[category].push({
+        title: post.title,
+        url: post.url
+    });
+});
 ---
 <head>
     <style>
@@ -17,53 +31,95 @@
 <nav class="sidenav">
     <h1><a href="/">Home</a></h1>
     <ul id="myUL">
-        <li><span class="caret">Games</span>
-            <ul class="nested">
-                <li><a href="/games/platformer/Platformer.html" target="_blank">2D</a></li>
-                <li>Coffee</li>
-
-            </ul>
-        </li>
+        {Object.entries(postsByCategory).map(([category, items]) => (
+                <li>
+                    <span class="caret">{category}</span>
+                    <ul class="nested">
+                        {items.map(item => (
+                                <li><a href={item.url}>{item.title}</a></li>
+                        ))}
+                    </ul>
+                </li>
+        ))}
     </ul>
 </nav>
 
 
 <script>
-
-    const COLLAPSE_WIDTH = 1080; // Make sure this matches the value above
+    const COLLAPSE_WIDTH = 1080;
     const toggleBtn = document.querySelector('.toggle-btn');
     const sidenav = document.querySelector('.sidenav');
     const main = document.querySelector('.main');
 
-    // Check width when page loads
-    document.addEventListener('DOMContentLoaded', checkWidth);
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSidebarState();
+        initializeTree();
+    });
 
-    var toggler = document.getElementsByClassName("caret");
-    var i;
+    function initializeTree() {
+        const togglers = document.getElementsByClassName("caret");
+        for (const toggler of togglers) {
+            // Add click listeners
+            toggler.addEventListener("click", function() {
+                const nestedList = this.parentElement.querySelector(".nested");
+                if (nestedList) {
+                    nestedList.classList.toggle("active");
+                    this.classList.toggle("caret-down");
+                    saveExpandedCategories();
+                }
+            });
+        }
 
-    for (i = 0; i < toggler.length; i++) {
-        toggler[i].addEventListener("click", function() {
-            this.parentElement.querySelector(".nested").classList.toggle("active");
-            this.classList.toggle("caret-down");
-        });
+        // Restore expanded state after setting up listeners
+        restoreExpandedCategories();
+    }
+
+    function restoreExpandedCategories() {
+        try {
+            const expandedCategories = JSON.parse(localStorage.getItem('expandedCategories') || '[]');
+            const togglers = document.getElementsByClassName("caret");
+
+            for (const toggler of togglers) {
+                const category = toggler.textContent.trim();
+                if (expandedCategories.includes(category)) {
+                    const nestedList = toggler.parentElement.querySelector(".nested");
+                    if (nestedList) {
+                        nestedList.classList.add("active");
+                        toggler.classList.add("caret-down");
+                    }
+                }
+            }
+        } catch (e) {
+            console.error('Error restoring categories:', e);
+            localStorage.removeItem('expandedCategories');
+        }
     }
 
     toggleBtn.addEventListener('click', () => {
         sidenav.classList.toggle('collapsed');
         toggleBtn.classList.toggle('collapsed');
         main.classList.toggle('collapsed');
+        localStorage.setItem('sidebarCollapsed', sidenav.classList.contains('collapsed'));
     });
 
-    function checkWidth() {
-        const toggleBtn = document.querySelector('.toggle-btn');
-        const sidenav = document.querySelector('.sidenav');
-        const main = document.querySelector('.main');
-
-        if (window.innerWidth < COLLAPSE_WIDTH) {
+    function loadSidebarState() {
+        const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+        if (isCollapsed || window.innerWidth < COLLAPSE_WIDTH) {
             sidenav.classList.add('collapsed');
             toggleBtn.classList.add('collapsed');
             main.classList.add('collapsed');
         }
+    }
+
+    function saveExpandedCategories() {
+        const expandedCategories = [];
+        const carets = document.getElementsByClassName("caret");
+        for (const caret of carets) {
+            if (caret.classList.contains("caret-down")) {
+                expandedCategories.push(caret.textContent.trim());
+            }
+        }
+        localStorage.setItem('expandedCategories', JSON.stringify(expandedCategories));
     }
 
 </script>
