@@ -20,7 +20,7 @@ export async function getPosts(): Promise<Post[]> {
             title: post.frontmatter?.title || slug.split('/').pop(),
             date: post.frontmatter?.date || '1970-01-01',
             body: post.compiledContent(),
-            url: '/' + slug
+            url: '/my_website_2/' + slug
         };
     });
 }
