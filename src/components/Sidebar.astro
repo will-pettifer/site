@@ -36,7 +36,7 @@ posts.forEach(post => {
                     <span class="caret">{category}</span>
                     <ul class="nested">
                         {items.map(item => (
-                                <li><a href='/site/'{item.url}>{item.title}</a></li>
+                                <li><a href={item.url}>{item.title}</a></li>
                         ))}
                     </ul>
                 </li>

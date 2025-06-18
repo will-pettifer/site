@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Games/post-1.md",
+                "file": "Games/Platformer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "post-1"
+              "title": "Platformer"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Games/post-1.md",
+                "file": "Games/Platformer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for post-1"
+              "title": "Backlinks for Platformer"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Games/post-1.md",
+                "file": "Games/Platformer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from post-1"
+              "title": "Outgoing links from Platformer"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Games/post-1.md",
+                "file": "Games/Platformer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of post-1"
+              "title": "Outline of Platformer"
             }
           }
         ]
@@ -168,10 +168,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8cf7e036ab9d7d31",
+  "active": "25411bb909ab1e5d",
   "lastOpenFiles": [
+    "Pasted image 20250618130719.png",
+    "Games/Platformer.md",
     "games/platformer/Platformer.html.md",
-    "Games/post-1.md",
     "Games/platformer/Platformer.html.md",
     "Games/platformer",
     "games/platformer",
