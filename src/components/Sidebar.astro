@@ -1,6 +1,6 @@
 ---
-import {getPosts} from "../content.loader";
-const posts = await getPosts();
+import {getPostsMetadata} from "../content.loader";
+const posts = await getPostsMetadata();
 
 const postsByCategory: Record<string, Array<{title: string, url: string}>> = {};
 posts.forEach(post => {

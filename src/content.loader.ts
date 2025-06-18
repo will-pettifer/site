@@ -7,6 +7,7 @@ export interface Post {
 }
 
 export async function getPosts(): Promise<Post[]> {
+
     const posts = await import.meta.glob('./content/**/*.md', { eager: true });
 
     return Object.entries(posts).map(([filepath, post]: [string, any]) => {
@@ -24,3 +25,7 @@ export async function getPosts(): Promise<Post[]> {
     });
 }
 
+export async function getPostsMetadata(): Promise<Omit<Post, 'body'>[]> {
+    const posts = await getPosts();
+    return posts.map(({ body, ...metadata }) => metadata);
+}
