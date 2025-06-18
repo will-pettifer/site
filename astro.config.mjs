@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://will-pettifer.github.io',
-    base: '/my_website_2',
+    base: '/site',
     markdown: {
         shikiConfig: {
             theme: 'github-dark'
