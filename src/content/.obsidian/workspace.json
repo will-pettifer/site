@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5398369a545161c6",
+        "id": "147aab4836aa5804",
         "type": "tabs",
         "children": [
           {
-            "id": "25411bb909ab1e5d",
+            "id": "e787a62c48ad0c02",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,10 +168,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "25411bb909ab1e5d",
+  "active": "e787a62c48ad0c02",
   "lastOpenFiles": [
-    "Pasted image 20250618130719.png",
+    "().md",
     "Games/Platformer.md",
+    "Pasted image 20250618130719.png",
     "games/platformer/Platformer.html.md",
     "Games/platformer/Platformer.html.md",
     "Games/platformer",
