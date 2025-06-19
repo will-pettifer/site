@@ -4,14 +4,14 @@
     --font-main: Bookerly, serif;
     --font-secondary: Bookerly, serif;
     --font-scale: 1em;
-    --background-color: #192a40;
-    --background-color-trans: rgba(25, 42, 64, 0.9);
-    --heading-color: #ffffff;
-    --text-color: #ffffff;
-    --link-color: #66a0ff;
+    --background-color: #2c334a;
+    --background-color-trans: rgb(104, 116, 144);
+    --heading-color: #fdfde1;
+    --text-color: #fdfde1;
+    --link-color: #81b2ff;
     --visited-color: #7b5bcc;
     --code-background-color: #000000;
-    --code-color: #b69393;
+    --code-color: #fdc6b3;
     --blockquote-color: #ffffff;
 }
 
@@ -83,6 +83,9 @@ aside{
 code{
     color: var(--code-color);
     background-color: var(--code-background-color);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
 }
 
 .main {

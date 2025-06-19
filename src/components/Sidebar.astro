@@ -11,23 +11,12 @@ posts.forEach(post => {
     }
     postsByCategory[category].push({
         title: post.title,
-        url: post.url
+        url: post.url,
     });
 });
+
 ---
-<head>
-    <style>
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            user-select: none;
-        }
-        a:hover {
-            color: var(--link-color);
-        }
-    </style>
-</head>
-<button class="toggle-btn"><<</button>
+<button class="toggle-btn" aria-label="Toggle Sidebar"><<</button>
 <nav class="sidenav">
     <h1><a href="/site/">Home</a></h1>
     <ul id="myUL">
@@ -44,82 +33,21 @@ posts.forEach(post => {
     </ul>
 </nav>
 
+<style>
+    a {
+        color: var(--text-color);
+        text-decoration: none;
+        user-select: none;
+    }
+    a:hover {
+        color: var(--link-color);
+    }
+</style>
 
 <script>
-    const COLLAPSE_WIDTH = 1030;
-    const toggleBtn = document.querySelector('.toggle-btn');
-    const sidenav = document.querySelector('.sidenav');
-    const main = document.querySelector('.main');
+    import { sidebarState } from '../SidebarState.ts';
 
     document.addEventListener('DOMContentLoaded', () => {
-        loadSidebarState();
-        initializeTree();
+        sidebarState.init();
     });
-
-    function initializeTree() {
-        const togglers = document.getElementsByClassName("caret");
-        for (const toggler of togglers) {
-            // Add click listeners
-            toggler.addEventListener("click", function() {
-                const nestedList = this.parentElement.querySelector(".nested");
-                if (nestedList) {
-                    nestedList.classList.toggle("active");
-                    this.classList.toggle("caret-down");
-                    saveExpandedCategories();
-                }
-            });
-        }
-
-        // Restore expanded state after setting up listeners
-        restoreExpandedCategories();
-    }
-
-    function restoreExpandedCategories() {
-        try {
-            const expandedCategories = JSON.parse(localStorage.getItem('expandedCategories') || '[]');
-            const togglers = document.getElementsByClassName("caret");
-
-            for (const toggler of togglers) {
-                const category = toggler.textContent.trim();
-                if (expandedCategories.includes(category)) {
-                    const nestedList = toggler.parentElement.querySelector(".nested");
-                    if (nestedList) {
-                        nestedList.classList.add("active");
-                        toggler.classList.add("caret-down");
-                    }
-                }
-            }
-        } catch (e) {
-            console.error('Error restoring categories:', e);
-            localStorage.removeItem('expandedCategories');
-        }
-    }
-
-    toggleBtn.addEventListener('click', () => {
-        sidenav.classList.toggle('collapsed');
-        toggleBtn.classList.toggle('collapsed');
-        main.classList.toggle('collapsed');
-        localStorage.setItem('sidebarCollapsed', sidenav.classList.contains('collapsed'));
-    });
-
-    function loadSidebarState() {
-        const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
-        if (isCollapsed || window.innerWidth < COLLAPSE_WIDTH) {
-            sidenav.classList.add('collapsed');
-            toggleBtn.classList.add('collapsed');
-            main.classList.add('collapsed');
-        }
-    }
-
-    function saveExpandedCategories() {
-        const expandedCategories = [];
-        const carets = document.getElementsByClassName("caret");
-        for (const caret of carets) {
-            if (caret.classList.contains("caret-down")) {
-                expandedCategories.push(caret.textContent.trim());
-            }
-        }
-        localStorage.setItem('expandedCategories', JSON.stringify(expandedCategories));
-    }
-
 </script>

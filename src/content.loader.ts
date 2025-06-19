@@ -1,7 +1,7 @@
 export interface Post {
     slug: string;
     title: string;
-    date: string;
+    date: Date;
     body: string;
     url: string;
 }
@@ -17,11 +17,11 @@ export async function getPosts(): Promise<Post[]> {
         return {
             slug,
             title: post.frontmatter?.title || slug.split('/').pop(),
-            date: post.frontmatter?.date || '1970-01-01',
+            date: new Date(post.frontmatter?.date) || '1970-01-01',
             body: post.compiledContent(),
             url: '/site/' + slug
         };
-    });
+    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getPostsMetadata(): Promise<Omit<Post, 'body'>[]> {
