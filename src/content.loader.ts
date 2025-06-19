@@ -14,10 +14,12 @@ export async function getPosts(): Promise<Post[]> {
         const slug = filepath
             .replace('./content/', '')
             .replace('.md', '');
+        const date = new Date(post.frontmatter?.date)
+        date.setMonth(date.getMonth() + 1)
         return {
             slug,
             title: post.frontmatter?.title || slug.split('/').pop(),
-            date: new Date(post.frontmatter?.date) || '1970-01-01',
+            date,
             body: post.compiledContent(),
             url: '/site/' + slug
         };
