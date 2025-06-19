@@ -77,6 +77,14 @@ img{
     max-width: 100%;
     height: auto;
 }
+image{
+    max-width: 100%;
+    height: auto;
+}
+picture{
+    max-width: 100%;
+    height: auto;
+}
 
 aside{
     color: var(--code-color);
@@ -90,21 +98,23 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
 }
 
-.main {
+
+
+main {
     max-width: var(--width);
     margin: 0 auto;
     padding: 20px;
 }
 @media (max-width: 1300px) {
-    .main {
+    main {
         margin-left: 270px;
     }
-    .main.collapsed {
+    main.collapsed {
         margin: 0 auto;
     }
 }
 @media (max-width: 1030px) {
-    .main {
+    main, main.collapsed {
         margin: 0 auto;
     }
 }
