@@ -1,5 +1,6 @@
 :root {
     --width: 720px;
+    --margin-begins: calc(260px * 2 + var(--width));
     --font-main: Bookerly, serif;
     --font-secondary: Bookerly, serif;
     --font-scale: 1em;
@@ -79,21 +80,25 @@ aside{
     color: var(--code-color);
     font-weight: 200;
 }
+code{
+    color: var(--code-color);
+    background-color: var(--code-background-color);
+}
 
 .main {
     max-width: var(--width);
     margin: 0 auto;
     padding: 20px;
 }
-@media (max-width: 1120px) {
+@media (max-width: 1300px) {
     .main {
-        margin-left: 180px;
+        margin-left: 270px;
     }
     .main.collapsed {
         margin: 0 auto;
     }
 }
-@media (max-width: 940px) {
+@media (max-width: 1030px) {
     .main {
         margin: 0 auto;
     }
@@ -111,7 +116,7 @@ a:hover {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 160px;
+    width: 260px;
     overflow-x: hidden;
     padding-top: 40px;
     padding-left: 20px;
@@ -124,7 +129,7 @@ a:hover {
 
 footer {
     font-weight: 200;
-    padding: 6em 0 0 0;
+    padding: 3em 0 0 0;
     text-align: center;
     color: var(--code-color);
 }

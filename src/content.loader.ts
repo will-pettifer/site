@@ -14,7 +14,6 @@ export async function getPosts(): Promise<Post[]> {
         const slug = filepath
             .replace('./content/', '')
             .replace('.md', '');
-        console.log(post);
         return {
             slug,
             title: post.frontmatter?.title || slug.split('/').pop(),

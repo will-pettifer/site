@@ -14,8 +14,6 @@ posts.forEach(post => {
         url: post.url
     });
 });
-
-
 ---
 <head>
     <style>
@@ -39,7 +37,6 @@ posts.forEach(post => {
                     <ul class="nested">
                         {items.map(item => (
                                 <li><a href={item.url}>{item.title}</a></li>
-
                         ))}
                     </ul>
                 </li>
@@ -49,7 +46,7 @@ posts.forEach(post => {
 
 
 <script>
-    const COLLAPSE_WIDTH = 1080;
+    const COLLAPSE_WIDTH = 1030;
     const toggleBtn = document.querySelector('.toggle-btn');
     const sidenav = document.querySelector('.sidenav');
     const main = document.querySelector('.main');
