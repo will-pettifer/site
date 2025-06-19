@@ -1,19 +1,43 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import '../styles/global.css';
+
+const image = "../images/Baccki-export.png";
+const url = "https://will-pettifer.github.io/site";
 ---
 
-<!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/site/icon.svg" />
+<head>
+    <title>{SITE_TITLE}</title>
+    <meta name="description" content={SITE_DESCRIPTION} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={SITE_TITLE} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:site_name" content="Will's Site" />
+
+    <!-- Twitter Card (Optional) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={SITE_TITLE} />
+    <meta name="twitter:description" content={SITE_DESCRIPTION} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/site/icon.svg" />
+
+    <!-- Font preloads -->
+    <link rel="preload" href="/site/fonts/Bookerly.ttf" as="font" type="font/bookerly" crossorigin />
+    <link rel="preload" href="/site/fonts/Bookerly Bold.ttf" as="font" type="font/bookerly" crossorigin />
+    <link rel="preload" href="/site/fonts/Bookerly Bold Italic.ttf" as="font" type="font/bookerly" crossorigin />
+    <link rel="preload" href="/site/fonts/Bookerly Italic.ttf" as="font" type="font/bookerly" crossorigin />
+    <link rel="preload" href="/site/fonts/Bookerly Light.ttf" as="font" type="font/bookerly" crossorigin />
+    <link rel="preload" href="/site/fonts/Bookerly Light Italic.ttf" as="font" type="font/bookerly" crossorigin />
+</head>
 
 
-<!-- Font preloads -->
-<link rel="preload" href="/site/fonts/Bookerly.ttf" as="font" type="font/bookerly" crossorigin />
-<link rel="preload" href="/site/fonts/Bookerly Bold.ttf" as="font" type="font/bookerly" crossorigin />
-<link rel="preload" href="/site/fonts/Bookerly Bold Italic.ttf" as="font" type="font/bookerly" crossorigin />
-<link rel="preload" href="/site/fonts/Bookerly Italic.ttf" as="font" type="font/bookerly" crossorigin />
-<link rel="preload" href="/site/fonts/Bookerly Light.ttf" as="font" type="font/bookerly" crossorigin />
-<link rel="preload" href="/site/fonts/Bookerly Light Italic.ttf" as="font" type="font/bookerly" crossorigin />
