@@ -8,13 +8,13 @@ export interface Post {
 
 export async function getPosts(): Promise<Post[]> {
 
-    const posts = await import.meta.glob('./content/**/*.md', { eager: true });
+    const posts = import.meta.glob('./content/**/*.md', { eager: true });
 
     return Object.entries(posts).map(([filepath, post]: [string, any]) => {
         const slug = filepath
             .replace('./content/', '')
             .replace('.md', '');
-
+        console.log(post);
         return {
             slug,
             title: post.frontmatter?.title || slug.split('/').pop(),
