@@ -11,13 +11,12 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-
 ---
 
 <BaseLayout title={post.title}>
     <article>
         <h1>{post.title}</h1>
-        <aside>{post.date.getDate() + '.' + post.date.getMonth() + '.' + post.date.getFullYear()}</aside>
+        <aside>{post.date.getDate() + '.' + (post.date.getMonth() + 1) + '.' + post.date.getFullYear()}</aside>
         <Fragment set:html={post.body} />
     </article>
 </BaseLayout>

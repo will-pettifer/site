@@ -1,9 +1,9 @@
 :root {
     --width: 720px;
     --margin-begins: calc(260px * 2 + var(--width));
-    --font-main: Bookerly, serif;
-    --font-secondary: Bookerly, serif;
-    --font-scale: 1em;
+    --font-main: Dante, serif;
+    --font-secondary: Dante, serif;
+    --font-scale: 1.2em;
     --background-color: #24293e;
     --background-color-trans: rgb(104, 116, 144);
     --heading-color: #fdfde1;
@@ -13,6 +13,49 @@
     --code-background-color: #000000;
     --code-color: #fdc6b3;
     --blockquote-color: #ffffff;
+}
+
+@font-face {
+    font-family: 'Dante';
+    src: url('/site/fonts/DanteMTStd-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Dante';
+    src: url('/site/fonts/DanteMTStd-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Dante';
+    src: url('/site/fonts/DanteMTStd-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Dante';
+    src: url('/site/fonts/DanteMTStd-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Dante';
+    src: url('/site/fonts/DanteMTStd-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Dante';
+    src: url('/site/fonts/DanteMTStd-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -60,17 +103,40 @@
 body {
     font-family: var(--font-main), serif;
     font-size: var(--font-scale);
-    font-weight: 200;
-    letter-spacing: 0.04em;
-    word-spacing: 0.07em;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    word-spacing: -0.1em;
     margin: 0;
     padding: 0;
-    text-align: left;
+    text-align: justify;
     background-color: var(--background-color);
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.5;
+    line-height: 1.3;
     color: var(--text-color);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary), serif;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+h1{
+    font-size: 2.5em;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.8em;
+}
+h4{
+    font-size: 1.6em;
+}
+h5{
+    font-size: 1.4em;
+}
+h6{
+    font-size: 1.2em;
 }
 
 img{
@@ -86,16 +152,13 @@ picture{
     height: auto;
 }
 
-aside{
+aside, footer{
     color: var(--code-color);
-    font-weight: 200;
+    font-size: 0.9em;
 }
 code{
     color: var(--code-color);
     background-color: var(--code-background-color);
-}
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
 }
 
 
@@ -183,7 +246,9 @@ ul, #myUL {
 .caret{
     cursor: pointer;
     user-select: none;
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 2;
 }
 
 .caret:hover{
@@ -203,7 +268,8 @@ ul, #myUL {
 
 .nested {
     display: none;
-    list-style-type: circle;
+    list-style-type: "⚘ ";
+    font-weight: 400;
 }
 
 .active {

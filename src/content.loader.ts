@@ -15,7 +15,6 @@ export async function getPosts(): Promise<Post[]> {
             .replace('./content/', '')
             .replace('.md', '');
         const date = new Date(post.frontmatter?.date)
-        date.setMonth(date.getMonth() + 1)
         return {
             slug,
             title: post.frontmatter?.title || slug.split('/').pop(),

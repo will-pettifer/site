@@ -1,5 +1,4 @@
 ---
-title: Platformer
 date: 2025-06-18
 ---
 
