@@ -58,48 +58,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Bookerly';
-    src: url('/site/fonts/Bookerly.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Bookerly';
-    src: url('/site/fonts/Bookerly Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Bookerly';
-    src: url('/site/fonts/Bookerly Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Bookerly';
-    src: url('/site/fonts/Bookerly Bold Italic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Bookerly';
-    src: url('/site/fonts/Bookerly Light.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Bookerly';
-    src: url('/site/fonts/Bookerly Light Italic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
-}
 body {
     font-family: var(--font-main), serif;
     font-size: var(--font-scale);
