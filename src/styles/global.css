@@ -3,8 +3,8 @@
     --margin-begins: calc(260px * 2 + var(--width));
     --font-main: UbuntuMono, sans-serif;
     --font-secondary: UbuntuMono, sans-serif;
-    --font-code: UbunutMono, monospace;
-    --font-scale: 1.1em;
+    --font-code: UbuntuMono, monospace;
+    --font-scale: 1.2em;
     --background-color: #212539;
     --background-color-trans: rgb(104, 116, 144);
     --background-color-2: #18202c;
