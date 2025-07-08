@@ -31,7 +31,7 @@ Brenda: "You are just wrong."
 
 Alan: "That isn't a good argument. Why am I wrong?"
 
-Brenda: "If you don't believe in the Principle of Sufficient Reason, then there doesn't need to be a reason for why you are wrong, I can state is as confidently as I can state, 'I exist'."
+Brenda: "If you don't believe in the Principle of Sufficient Reason, then there doesn't need to be a reason for why you are wrong, I can state it as confidently as I can state, 'I exist'."
 #### Part 3
 Next, we will establish that anything Possible must be Contingent on another existence distinct from itself.
 
