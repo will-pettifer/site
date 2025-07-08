@@ -9,8 +9,8 @@
     --background-color-trans: rgb(104, 116, 144);
     --background-color-2: #18202c;
     --accent-color: #495777;
-    --heading-color: #e6e6cb;
-    --text-color: #e6e6cb;
+    --heading-color: #fdfde1;
+    --text-color: #dacdc9;
     --link-color: #81b2ff;
     --visited-color: #7b5bcc;
     --code-background-color: #18202c;
@@ -282,7 +282,7 @@ footer {
     left: 10px;
     top: 5px;
     z-index: 2;
-    color: var(--text-color);
+    color: var(--heading-color);
     font-size: 20px;
     background: none;
     border: none;
@@ -313,6 +313,7 @@ ul{
     font-weight: 500;
     font-size: 1.2em;
     line-height: 2;
+    color: var(--heading-color)
 }
 
 .caret:hover{
