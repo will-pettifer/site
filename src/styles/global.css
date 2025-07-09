@@ -1,8 +1,8 @@
 :root {
     --width: 720px;
     --margin-begins: calc(260px * 2 + var(--width));
-    --font-main: UbuntuMono, sans-serif;
-    --font-secondary: UbuntuMono, sans-serif;
+    --font-main: Alegreya, serif;
+    --font-secondary: Alegreya, serif;
     --font-code: UbuntuMono, monospace;
     --font-scale: 1.2em;
     --background-color: #212539;
@@ -120,10 +120,9 @@
 }
 
 body {
-    font-family: var(--font-main), sans-serif;
+    font-family: var(--font-main), serif;
     font-size: var(--font-scale);
     font-weight: 400;
-    word-spacing: -0.2em;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -134,7 +133,7 @@ body {
     color: var(--text-color);
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-secondary), sans-serif;
+    font-family: var(--font-secondary), serif;
     font-weight: 500;
     color: var(--heading-color);
     margin-bottom: -0.2em;
@@ -335,7 +334,7 @@ ul{
     display: none;
     list-style-type: "⚘ ";
     font-weight: 400;
-    font-family: var(--font-main), sans-serif;
+    font-family: var(--font-main), serif;
 }
 
 .active {
