@@ -50,7 +50,7 @@ Next, we will establish certain facts about this Necessary existence:
 
 1. It is sufficiently powerful to create everything else that exists.
 2. It is eternal, as if it began to exist or could cease to exist, then before and after its existence it would not exist, but it isn't possible for it to not exist as that violates the definition of Necessity.
-3. It is independent. If the existence of the Necessary being depended on something else, then that implies that there is a condition on its existence, and a possible world in which it did not exist. This contradicts Necessity. It could also be argued that there can be no limits on the attributes of the Necessary existence. If it has knowledge, but only of some things and not others, why? What is the explanation for this arbitrary limit? What is its grounding?
+3. It is independent. If the existence of the Necessary being depended on something else, then that implies that there is a condition on its existence. This contradicts Necessity. It could also be argued, but I can't yet formulate this properly, that there can be no limits on the attributes of the Necessary existence. If it has knowledge, but only of some things and not others, why? What is the explanation for this arbitrary limit? What is its grounding?
 4. It is not composed of parts. If the Necessary existence were composed of parts, then it would depend upon those parts to exist, which violates point 3. This also tells us that the Universe can't be Necessary, as the removal of all matter and energy would mean the Universe did not exist.
 #### Part 6
 Next, we will prove that the Necessary existence has a will.
