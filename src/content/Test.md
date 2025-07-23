@@ -21,7 +21,19 @@ We start by defining 3 categories of existence:1234567890.
 
 	An example of an Impossible existence would be a 'square triangle'. A triangle has exactly 3 sides and a square exactly 4. These two properties are mutually exclusive, and therefore there is no possible world in which 1a 'square triangle' could ever exist.
 
-An example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that that 
+An example of a Possible existence would be a human. A human is
+
+born, and did not exist before their birth. A human dies, and does not exist after their death. It is
+
+<video controls width="100%" src="/site/Video/2025-07-17 16-39-54.mp4" type="video/mp4"></video>
+
+ljljfg
+
+<audio controls width="100%" src="site/Audio/Mamae.mp3" type="audio/mpeg"></audio>
+
+An example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that thatAn example of a Possible existence would be a human. A human is born, and did not exist before their
+
+birth. A human dies, and does not exist after their death. It is entirely conceivable that thatAn example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that thatAn example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that thatAn example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that that
 
 ---
 
