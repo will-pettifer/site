@@ -25,11 +25,7 @@ An example of a Possible existence would be a human. A human is
 
 born, and did not exist before their birth. A human dies, and does not exist after their death. It is
 
-<video controls width="100%" src="/site/Video/2025-07-17 16-39-54.mp4" type="video/mp4"></video>
-
-ljljfg
-
-<audio controls width="100%" src="site/Audio/Mamae.mp3" type="audio/mpeg"></audio>
+<iframe width="100%" height="404" src="https://www.youtube.com/embed/29mF-kqNWpE" title="Parallel C++: OpenMP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 An example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that thatAn example of a Possible existence would be a human. A human is born, and did not exist before their
 
