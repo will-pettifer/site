@@ -5,12 +5,22 @@ import image from "../images/Baccki-export.png";
 ---
 
 <BaseLayout>
-    <article>
-        <h1>Welcome! 🌼</h1>
-        <p>
-            Hi, I'm Will, I'm a UK-based Game-Developer, and this is my website. If you check the Blog and Games tabs on
-             the left, you can see what I get up to. All contact info and social links are at the bottom of the page.
-        </p>
-        <Image src={image} alt="Background from a game I made." loading="eager" />
-    </article>
+    <div class="article-title">
+        <div class="centred-content">
+            <div class="article-title-content">
+                <span class="article-name">Welcome! 🌼</span>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="centred-content">
+            <article>
+                <p>
+                    Hi, I'm Will, I'm a UK-based Game-Developer, and this is my website. If you check the Blog and Games tabs on
+                    the left, you can see what I get up to. All contact info and social links are at the bottom of the page.
+                </p>
+                <Image src={image} alt="Background from a game I made." loading="eager" />
+            </article>
+        </div>
+    </main>
 </BaseLayout>

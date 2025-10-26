@@ -11,10 +11,10 @@ import Footer from "../components/Footer.astro";
     </head>
     <body>
         <div class="layout">
-            <Sidebar />
-            <main class="main">
+            <div class="main-wrap">
+                <Sidebar />
                 <slot />
-            </main>
+            </div>
             <Footer />
         </div>
     </body>
