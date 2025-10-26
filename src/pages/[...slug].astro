@@ -17,7 +17,7 @@ const { post } = Astro.props;
     <div class="article-title">
         <div class="centred-content">
             <div class="article-title-content">
-                <span class="article-name">{post.title}</span>&nbsp
+                <span class="article-name">{post.title}</span> <br>
                 <span class="article-date"> {post.date.getDate()
                     + '.' + (post.date.getMonth() + 1)
                     + '.' + post.date.getFullYear()}</span>
