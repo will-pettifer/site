@@ -331,13 +331,13 @@ a:hover {
 
 .sidenav {
     position: fixed;
-    top: 0;
+    top: -100px;
     left: 0;
-    bottom: 0;
+    bottom: -100px;
     width: 300px;
     overflow-x: hidden;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 140px;
+    padding-bottom: 140px;
     background-color: var(--background-color-2);
     border-right: 1px solid var(--accent-color);
 }
@@ -368,10 +368,10 @@ footer {
     top: 20px;
     z-index: 2;
     color: var(--heading-color);
-    font-size: 30px;
+    font-size: 25px;
     background: var(--background-color);
     cursor: pointer;
-    padding: 0px 12px 5px 12px;
+    padding: 3px 5px;
     font-weight: 700;
 }
 @media (max-width: 870px) {
