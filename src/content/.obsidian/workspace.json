@@ -39,10 +39,14 @@
             "id": "994a2c4f2fde78ec",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Personal Blog/The Beauty of Monotheism.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "The Beauty of Monotheism"
             }
           }
         ],
@@ -194,13 +198,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8cf7e036ab9d7d31",
+  "active": "994a2c4f2fde78ec",
   "lastOpenFiles": [
     "Personal Blog/The Cosmological Argument.md",
-    "Personal Blog/The Beauty of Monotheism.md",
-    "Test.md",
-    "Dev Blog/Making a Website.md",
     "Games/Platformer.md",
+    "Test.md",
+    "Personal Blog/The Beauty of Monotheism.md",
+    "Personal Blog/The Beauty of Monotheism.md",
+    "Dev Blog/Making a Website.md",
     "Games/PlatformerImg1.png",
     "Test.md~",
     "Mamae.mp3",
