@@ -330,7 +330,7 @@ a:hover {
 }
 
 .sidenav {
-    position: fixed;
+    float: left;
     height:100vh;
     height: 100dvh;
     width: 300px;
