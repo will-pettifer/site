@@ -330,9 +330,9 @@ a:hover {
 }
 
 .sidenav {
-    float: left;
+    position: fixed;
     height:100vh;
-    height: 100dvh;
+    height: 100svh;
     width: 300px;
     overflow-x: hidden;
     overflow-y: auto;
