@@ -20,31 +20,33 @@ posts.forEach(post => {
 
 <button class="toggle-btn" aria-label="Toggle Sidebar"><<</button>
 <nav class="sidenav">
-    <h3>
-        <a href="/site/" style="color: var(--heading-color)">
-            Will-Pettifer&nbsp
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
-                <path
-                        fill="currentColor"
-                        d={SITE_ICON}>
-                </path>
-                <title>Site</title>
-            </svg>
-        </a>
-    </h3>
-    <br/>
-    <ul class="sidebar-ul">
-        {Object.entries(postsByCategory).map(([category, items]) => (
-                <li>
-                    <span class="caret">{category}</span>
-                    <ul class="nested">
-                        {items.map(item => (
-                                <li><a href={item.url}>{item.title}</a></li>
-                        ))}
-                    </ul>
-                </li>
-        ))}
-    </ul>
+    <div class="sidebar-content">
+        <h3>
+            <a href="/site/" style="color: var(--heading-color)">
+                Will-Pettifer&nbsp
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
+                    <path
+                            fill="currentColor"
+                            d={SITE_ICON}>
+                    </path>
+                    <title>Site</title>
+                </svg>
+            </a>
+        </h3>
+        <br/>
+        <ul class="sidebar-ul">
+            {Object.entries(postsByCategory).map(([category, items]) => (
+                    <li>
+                        <span class="caret">{category}</span>
+                        <ul class="nested">
+                            {items.map(item => (
+                                    <li><a href={item.url}>{item.title}</a></li>
+                            ))}
+                        </ul>
+                    </li>
+            ))}
+        </ul>
+    </div>
 </nav>
 
 <style>

@@ -1,20 +1,18 @@
 :root {
-    --width: 720px;
-    --margin-begins: calc(260px * 2 + var(--width));
+    --width: 760px;
     --font-main: AlegreyaSans, sans-serif;
     --font-secondary: Alegreya, serif;
     --font-code: UbuntuMono, monospace;
     --font-scale: 1.3em;
-    --background-color: #212539;
-    --background-color-trans: rgb(104, 116, 144);
-    --background-color-2: #18202c;
-    --accent-color: #495777;
-    --heading-color: #ffffef;
-    --text-color: #dfd2ce;
-    --link-color: #81b2ff;
-    --visited-color: #7b5bcc;
-    --code-background-color: #18202c;
-    --code-color: #fdc6b3;
+    --background-color: #232634;
+    --background-color-2: #292c3c;
+    --accent-color: #414559;
+    --heading-color: #b5bfe2;
+    --text-color: #a5adce;
+    --link-color: #f2d5cf;
+    --visited-color: #e78284;
+    --code-background-color: #292c3c;
+    --code-color: #ea999c;
     --blockquote-color: #ffffff;
 }
 
@@ -171,6 +169,7 @@ body {
     text-align: left;
     background-color: var(--background-color);
     word-wrap: break-word;
+    word-spacing: 0.1em;
     overflow-wrap: break-word;
     line-height: 1.6;
     color: var(--text-color);
@@ -227,12 +226,15 @@ code{
     background-color: var(--code-background-color);
     color: var(--code-color);
     font-family: var(--font-code), monospace;
-    border-radius: 0.2em;
+    font-size: 0.9em;
+    word-spacing: normal;
 }
 .astro-code{
     background-color: var(--code-background-color) !important;
-    border-radius: 0.5em;
+    border-radius: 0.3em;
+    border: 1px solid var(--accent-color);
     padding: 1em;
+    word-spacing: normal;
 }
 
 
@@ -243,6 +245,7 @@ table {
     font-family: var(--font-code), monospace;
     color: var(--code-color);
     margin-bottom: -0.8em;
+    word-spacing: normal;
 }
 th,
 td {
@@ -267,25 +270,27 @@ table::after{
     height: 8px;
 }
 
-
-
-main {
+main, .footer-content {
     max-width: var(--width);
     margin: 0 auto;
-    padding: 20px;
+    padding-bottom: 2em;
 }
-@media (max-width: 1300px) {
-    main {
-        margin-left: 270px;
+@media (max-width: 1380px) {
+    .footer-content, main {
+        margin-left: 300px !important;
     }
-    main.collapsed {
-        margin: 0 auto;
+    .footer-content.collapsed, main.collapsed {
+        margin: 0 auto !important;
     }
 }
-@media (max-width: 1030px) {
-    main, main.collapsed {
-        margin: 0 auto;
+@media (max-width: 1080px) {
+    main, main.collapsed, .footer-content, .footer-content.collapsed {
+        margin: 0 auto !important;
     }
+}
+
+article {
+    margin: 20px;
 }
 
 a {
@@ -300,44 +305,54 @@ a:hover {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 260px;
+    width: 300px;
     overflow-x: hidden;
     padding-top: 40px;
-    padding-left: 20px;
     padding-bottom: 40px;
-    background-color: var(--background-color);
+    background-color: var(--background-color-2);
+    border-right: 1px solid var(--accent-color);
 }
 .sidenav.collapsed {
     width: 0;
-    padding-left: 0;
+    border: none;
+}
+.sidebar-content {
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 footer {
-    padding: 2em 0 1em 0;
+    padding: 1em 0 0 0;
     text-align: center;
     color: var(--code-color);
     line-height: 2em;
+    word-spacing: normal;
+    background-color: var(--background-color-2);
+    border-top: 1px solid var(--accent-color);
 }
 
 .toggle-btn {
     position: fixed;
-    border-radius: 100%;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.3em;
     left: 20px;
     top: 20px;
     z-index: 2;
     color: var(--heading-color);
     font-size: 20px;
-    background: none;
-    border: none;
+    background: var(--background-color);
     cursor: pointer;
     padding: 3px 5px;
     font-weight: 700;
 }
 .toggle-btn:hover {
     color: var(--link-color);
+    background: var(--accent-color) !important;
+    border-color: var(--link-color);
 }
 .toggle-btn.collapsed {
     transform: scaleX(-1);
+    background: var(--background-color-2);
 }
 
 
@@ -368,6 +383,7 @@ ul{
     display: inline-block;
     margin-right: 6px;
     transform: rotate(60deg);
+    padding: 2px;
 }
 
 .caret-down::before {

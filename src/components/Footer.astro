@@ -3,47 +3,49 @@ import {CV_ICON, CV_URL, GITHUB_ICON, GITHUB_URL, ITCH_ICON, ITCH_URL, LINKEDIN_
 const today = new Date()
 ---
 <footer>
-    &copy; {today.getFullYear()} William Pettifer. All rights reserved.
-    <br> william.j.g.pettifer@gmail.com
-    <div class="social-links">
-        <a href={CV_URL} target="_blank">
-            <svg viewBox="0 0 32 32" aria-hidden="true" width="32" height="32">
-                <path
-                    fill="currentColor"
-                    d={CV_ICON}>
-                </path>
-                <title>CV</title>
-            </svg>
-        </a>
-        <a href={LINKEDIN_URL} target="_blank">
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
-                <path
-                    fill="currentColor"
-                    d={LINKEDIN_ICON}>
-                </path>
-                <title>LinkedIn</title>
-            </svg>
-        </a>
-        <a href={ITCH_URL} target="_blank">
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
-                <path
-                    fill="currentColor"
-                    d={ITCH_ICON}>
+    <div class="footer-content">
+        &copy; {today.getFullYear()} William Pettifer. All rights reserved.
+        <br> william.j.g.pettifer@gmail.com
+        <div class="social-links">
+            <a href={CV_URL} target="_blank">
+                <svg viewBox="0 0 32 32" aria-hidden="true" width="32" height="32">
+                    <path
+                        fill="currentColor"
+                        d={CV_ICON}>
+                    </path>
+                    <title>CV</title>
+                </svg>
+            </a>
+            <a href={LINKEDIN_URL} target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
+                    <path
+                        fill="currentColor"
+                        d={LINKEDIN_ICON}>
+                    </path>
+                    <title>LinkedIn</title>
+                </svg>
+            </a>
+            <a href={ITCH_URL} target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
+                    <path
+                        fill="currentColor"
+                        d={ITCH_ICON}>
 
-                </path>
-                <title>Itch.io</title>
-            </svg>
-        </a>
-        <a href={GITHUB_URL} target="_blank">
-            <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
-                <path
-                    fill="currentColor"
-                    d={GITHUB_ICON}>
+                    </path>
+                    <title>Itch.io</title>
+                </svg>
+            </a>
+            <a href={GITHUB_URL} target="_blank">
+                <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
+                    <path
+                        fill="currentColor"
+                        d={GITHUB_ICON}>
 
-                </path>
-                <title>GitHub</title>
-            </svg>
-        </a>
+                    </path>
+                    <title>GitHub</title>
+                </svg>
+            </a>
+        </div>
     </div>
 </footer>
 <style>

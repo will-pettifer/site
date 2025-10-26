@@ -3,7 +3,7 @@ class SidebarState {
         COLLAPSED: 'sidebarCollapsed',
         EXPANDED_CATEGORIES: 'expandedCategories'
     };
-    private static readonly COLLAPSE_WIDTH = 1030;
+    private static readonly COLLAPSE_WIDTH = 1080;
 
     public init() {
         this.loadInitialState();
@@ -32,10 +32,12 @@ class SidebarState {
         const sidenav = document.querySelector('.sidenav');
         const main = document.querySelector('.main');
         const toggleBtn = document.querySelector('.toggle-btn');
+        const footerContent = document.querySelector('.footer-content');
 
         const isCollapsed = sidenav?.classList.toggle('collapsed');
         toggleBtn?.classList.toggle('collapsed');
         main?.classList.toggle('collapsed');
+        footerContent?.classList.toggle('collapsed');
 
         localStorage.setItem(SidebarState.STORAGE_KEYS.COLLAPSED, String(isCollapsed));
     }
@@ -53,15 +55,18 @@ class SidebarState {
         const sidenav = document.querySelector('.sidenav');
         const main = document.querySelector('.main');
         const toggleBtn = document.querySelector('.toggle-btn');
+        const footerContent = document.querySelector('.footer-content');
 
         if (value) {
             sidenav?.classList.add('collapsed');
             toggleBtn?.classList.add('collapsed');
             main?.classList.add('collapsed');
+            footerContent?.classList.add('collapsed');
         } else {
             sidenav?.classList.remove('collapsed');
             toggleBtn?.classList.remove('collapsed');
             main?.classList.remove('collapsed');
+            footerContent?.classList.remove('collapsed');
         }
     }
 

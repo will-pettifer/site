@@ -12,7 +12,7 @@ export default defineConfig({
         rehypePlugins: [rehypeMathjax],
         syntaxHighlight: 'shiki',
         shikiConfig: {
-            theme: 'github-dark'
+            theme: 'catppuccin-frappe'
         }
     }
 });
