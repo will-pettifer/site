@@ -331,11 +331,9 @@ a:hover {
 
 .sidenav {
     position: fixed;
-    height:100vh;
-    height: 100svh;
+    height: 200%;
     width: 300px;
     overflow-x: hidden;
-    overflow-y: auto;
     padding-top: 40px;
     padding-bottom: 2em;
     background-color: var(--background-color-2);
@@ -377,6 +375,8 @@ footer {
 @media (max-width: 870px) {
     .toggle-btn {
         top: auto;
+        left: auto;
+        right: 20px;
         bottom: 60px;
     }
 }
