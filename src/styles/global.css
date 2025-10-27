@@ -273,12 +273,10 @@ table::after{
     height: 8px;
 }
 
-.main-wrap {
-    background-color: var(--background-color);
-}
-
 main {
+    padding-top: 1px;
     padding-bottom: 2em;
+    background-color: var(--background-color);
 }
 
 .article-title {
@@ -329,33 +327,27 @@ a:hover {
     color: var(--text-color);
 }
 
-.sidenav {
-    position: fixed;
-    height: 200%;
-    width: 300px;
-    overflow-x: hidden;
-    padding-top: 40px;
-    padding-bottom: 2em;
-    background-color: var(--background-color-2);
-    border-right: 1px solid var(--accent-color);
-}
-.sidenav.collapsed {
-    width: 0;
-    border: none;
-}
 .sidebar-content {
-    padding-right: 20px;
-    padding-left: 20px;
+    height: 100%;
+    overflow-y: auto;
+    padding: 2em 1em 2em 1em;
+    box-sizing: border-box;
+}
+@media (max-width: 1080px) {
+    .sidebar-content {
+        padding: 0 1em 2em 1em;
+    }
 }
 
 footer {
-    padding: 1em 0 2em 0;
-    text-align: center;
-    color: var(--code-color);
-    line-height: 2em;
-    word-spacing: normal;
     background-color: var(--background-color-2);
     border-top: 1px solid var(--accent-color);
+}
+.footer-content {
+    padding: 1em 1em 2em 1em;
+    text-align: center;
+    color: var(--code-color);
+    word-spacing: normal;
 }
 
 .toggle-btn {
@@ -372,12 +364,16 @@ footer {
     padding: 3px 5px;
     font-weight: 700;
 }
-@media (max-width: 870px) {
+@media (max-width: 1080px) {
     .toggle-btn {
         top: auto;
         left: auto;
         right: 20px;
         bottom: 60px;
+        transform: scaleX(-1);
+    }
+    .toggle-btn.collapsed {
+        transform: scaleX(1)!important;
     }
 }
 .toggle-btn:hover {

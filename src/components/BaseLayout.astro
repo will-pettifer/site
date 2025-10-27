@@ -10,12 +10,54 @@ import Footer from "../components/Footer.astro";
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
     <body>
+        <button class="toggle-btn" aria-label="Toggle Sidebar"><<</button>
         <div class="layout">
-            <div class="main-wrap">
+            <div class="sidenav">
                 <Sidebar />
-                <slot />
             </div>
+            <slot />
             <Footer />
         </div>
     </body>
 </html>
+
+<style>
+    .toggle-btn {
+        z-index: 100;
+    }
+
+    .sidenav {
+        position: fixed;
+        height: 100vh;
+        overflow-y: hidden;
+        z-index: 1;
+        width: 300px;
+        border-right: 1px solid var(--accent-color);
+        border-radius: 0;
+        background: var(--background-color-2)
+    }
+    .sidenav.collapsed {
+        width: 0;
+        border: none;
+    }
+    @media (max-width: 1080px) {
+        .sidenav {
+            right: 0;
+            height: 80vh;
+            border: 1px solid var(--accent-color);
+            border-radius: 0.3em;
+            margin: 10px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<script>
+    import { sidebarState } from '../SidebarState.ts';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        sidebarState.init();
+    });
+</script>
