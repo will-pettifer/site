@@ -1,6 +1,7 @@
 ---
 date: 2025-07-08
 ---
+[Part 1](#part-1) | [Part 2](#part-2) | [Part 3](#part-3) | [Part 4](#part-4) | [Part 5](#part-5) | [Part 6](#part-6) | [Part 7](#part-7) | [Conclusion](#conclusion)
 #### Part 1
 We start by defining 3 categories of existence:
 

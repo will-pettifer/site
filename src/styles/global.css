@@ -208,17 +208,14 @@ h6{
     margin-top: 1.5em;
 }
 
-img{
+img, image, picture{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     max-width: 100%;
     height: auto;
-}
-image{
-    max-width: 100%;
-    height: auto;
-}
-picture{
-    max-width: 100%;
-    height: auto;
+    border-radius: 0.3em;
+    border: 1px solid var(--accent-color);
 }
 
 aside, footer{
@@ -229,7 +226,7 @@ code{
     background-color: var(--code-background-color);
     color: var(--code-color);
     font-family: var(--font-code), monospace;
-    font-size: 0.9em;
+    font-size: 0.8em;
     word-spacing: normal;
 }
 .astro-code{
@@ -238,6 +235,14 @@ code{
     border: 1px solid var(--accent-color);
     padding: 1em;
     word-spacing: normal;
+}
+
+blockquote {
+    padding-left: 1em;
+    margin: 0;
+    border-left: 2px solid var(--code-color);
+    border-radius: 0.3em;
+    background: var(--background-color-2)
 }
 
 
@@ -324,7 +329,7 @@ a {
     color: var(--link-color);
 }
 a:hover {
-    color: var(--text-color);
+    color: var(--code-color);
 }
 
 .sidebar-content {
@@ -361,7 +366,7 @@ footer {
     font-size: 25px;
     background: var(--background-color);
     cursor: pointer;
-    padding: 3px 5px;
+    padding: 3px 8px;
     font-weight: 700;
 }
 @media (max-width: 1080px) {
