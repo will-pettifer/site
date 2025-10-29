@@ -80,7 +80,7 @@ for (auto it = homeMarkers.begin(); it != homeMarkers.end(); ++it) {
 }
 ```
 
-Finally, I switched back to vectors. I stored grid IDs on the markers to remove them from the correct cell, and then cell-specific IDs so that I could access the element without iterating through every element. I then used 'swap and pop' to remove the element without moving every element, which finally had a complexity of O(1):
+Finally, I switched back to vectors. I stored grid IDs on the markers so that I could search for them without iterating through every element. I then used 'swap and pop' to remove the marker without moving every element in the vector, which finally had a complexity of O(1):
 
 ```c++
 if (marker->type == Marker::Food) {  
