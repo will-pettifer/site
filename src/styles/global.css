@@ -240,6 +240,7 @@ code{
 blockquote {
     padding-left: 1em;
     margin: 0;
+    border: 1px solid var(--accent-color);
     border-left: 2px solid var(--code-color);
     border-radius: 0.3em;
     background: var(--background-color-2)
