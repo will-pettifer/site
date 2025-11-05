@@ -279,6 +279,13 @@ table::after{
     height: 8px;
 }
 
+.video-container {
+    border: 1px solid var(--accent-color);
+    border-radius: 0.3em;
+    width: 100%;
+}
+
+
 main {
     padding-top: 1px;
     padding-bottom: 2em;

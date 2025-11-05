@@ -9,14 +9,14 @@ draft: false
 >⚘ [Vectors](#vectors) </br>
 >⚘ [Reflections](#reflections)
 
-</br>
-<iframe width="1100" height="619" src="https://www.youtube.com/embed/uXmbczCK6pM" title="ant-sim-demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+![](ant-sim-ants.png)
 
 This project was made using SFML and OpenMP. It simulates an ant colony, where ants leave their nest, search for food while depositing pheromones, and then use those pheromones to find a way home. This project was a great introduction to parallel programming, but more importantly it was the first time I had finished a project in C++.
 
 The main challenge was improving performance. There are a number of optimisations I had to make, which forced me to learn a lot more about C++. I profiled using Nsight Graphics, Massif, and Perf.
 
-![](ant-sim-ants.png)
+</br>
+<iframe class="video-container" height="427" src="https://www.youtube.com/embed/uXmbczCK6pM" title="ant-sim-demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Navigation
 For the ants to choose a direction, they search three zones in front of them for pheromones and the pick the direction with the most. My initial approach had been to get every ant to check every pheromone every frame, which of course was extremely slow.  The first optimisation was to get the ants to check only at set intervals, and to then randomly offset these intervals on construction:

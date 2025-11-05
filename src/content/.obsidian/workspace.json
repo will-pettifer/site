@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev Blog/Ant Simulator.md",
+                "file": "Dev Blog/Space Dog Fight Game.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ant Simulator"
+              "title": "Space Dog Fight Game"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dev Blog/Ant Simulator.md",
+                "file": "Dev Blog/Space Dog Fight Game.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ant Simulator"
+              "title": "Backlinks for Space Dog Fight Game"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dev Blog/Ant Simulator.md",
+                "file": "Dev Blog/Space Dog Fight Game.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ant Simulator"
+              "title": "Outline of Space Dog Fight Game"
             }
           }
         ],
@@ -214,10 +214,10 @@
   },
   "active": "853c5b2895e278fa",
   "lastOpenFiles": [
+    "Dev Blog/Ant Simulator.md",
     "Dev Blog/Space Dog Fight Game.md",
     "Dev Blog/Space Dog Fight Game.md~",
     "Dev Blog/space-dog-sine-graph.png",
-    "Dev Blog/Ant Simulator.md",
     "test/1Test.md.md",
     "Personal Blog/The Cosmological Argument.md",
     "Games/platformer-1.png",
