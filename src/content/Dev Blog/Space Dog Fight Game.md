@@ -24,11 +24,15 @@ This project was made using OpenGL/OpenTK and was written in C#. It includes bas
 ### Sine
 I reviewed a few different options for this, such as a Taylor series or a CORDIC algorithm, but in the end I decided this would be the simplest. I used Bhāskara I's sine approximation, which is a really simple formula:
 
-$$sin(x)\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}$$
+$$
+sin(x)\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}
+$$
 
 Or for cosine:
 
-$$cos(y)\approx\frac{\pi^2-4y^2}{\pi^2+y^2}$$
+$$
+cos(y)\approx\frac{\pi^2-4y^2}{\pi^2+y^2}
+$$
 
 This produces this graph, where blue is cosine, red is the formula:
 
@@ -77,11 +81,15 @@ public class Mat4
 
 A 2D vector can be thought of as a scaling of the unit vectors, so you go along the x-axis by 4, and then along the y-axis by 3:
 
-$$4\begin{bmatrix}1\\0\end{bmatrix}+3\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}$$
+$$
+4\begin{bmatrix}1\\0\end{bmatrix}+3\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}
+$$
 
 If the unit vectors are changed, then the vector is transformed into the space that those unit vectors now represent. These unit vectors can be represented as the columns of a matrix:
 
-$$\begin{bmatrix}1&0\\0&1\end{bmatrix}\begin{bmatrix}4\\3\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}$$
+$$
+\begin{bmatrix}1&0\\0&1\end{bmatrix}\begin{bmatrix}4\\3\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}
+$$
 
 This is how matrices represent the rotation, scaling, and shearing of the input vectors, but the actual transformation is just the multiplication of the columns by each component of the vector. This is why I stored the columns rather than the rows, and it made the multiplication much simpler:
 

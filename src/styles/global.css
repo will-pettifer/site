@@ -1,3 +1,5 @@
+@import "katex/dist/katex.min.css";
+
 :root {
     --width: 760px;
     --font-main: AlegreyaSans, sans-serif;
@@ -283,6 +285,16 @@ table::after{
     border: 1px solid var(--accent-color);
     border-radius: 0.3em;
     width: 100%;
+}
+
+.katex-display {
+}
+.katex {
+    text-align: center;
+    font-size: 1em;
+}
+.katex-inline {
+    margin: 0 0.15em;
 }
 
 

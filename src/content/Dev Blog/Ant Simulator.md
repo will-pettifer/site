@@ -15,7 +15,6 @@ This project was made using SFML and OpenMP. It simulates an ant colony, where a
 
 The main challenge was improving performance. There are a number of optimisations I had to make, which forced me to learn a lot more about C++. I profiled using Nsight Graphics, Massif, and Perf.
 
-</br>
 <iframe class="video-container" height="427" src="https://www.youtube.com/embed/uXmbczCK6pM" title="ant-sim-demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Navigation

@@ -1,5 +1,5 @@
 ---
-date: 1976-12-31
+date: 2004-12-31
 draft: true
 ---
 
@@ -72,6 +72,8 @@ An example of a Possible existence would be a human. A human is born, and did no
 
 *An example of a Possible existence would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that that human's parents could have made the decision not to have them, and so there is a possible world in which they never existed in the first place.*
 
-$$sin(x)\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}$$
+$$
+sin(x)\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}
+$$
 
-An example of a Possible existence x11$\infty-100\frac{\frac{1}{1}}{12}$ would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that that human's parents could have made the decision not to have them, and so there is a possible world in which they never existed in the first place.
+An example of a Possible existence x11$\infty-100\frac{\frac{1}{1}}{12}$ would be a human. A human is born, and did not exist before their birth. A human dies, and does not exist after their death. It is entirely conceivable that that human's $\infty-100\frac{\frac{1}{1}}{12}$  parents could have made the decision not to have them, and so there is a possible world in which they never existed in the first place.
