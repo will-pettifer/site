@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev Blog/Space Dog Fight Game.md",
+                "file": "Dev Blog/Ant Simulator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Space Dog Fight Game"
+              "title": "Ant Simulator"
             }
           }
         ],
@@ -121,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.5
+    "width": 281.5
   },
   "right": {
     "id": "25dc6c1ac241f999",
@@ -137,8 +137,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Games/Platformer.md",
-                "collapseAll": false,
+                "file": "Dev Blog/Ant Simulator.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Platformer"
+              "title": "Backlinks for Ant Simulator"
             }
           },
           {
@@ -185,21 +185,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Games/Platformer.md",
+                "file": "Dev Blog/Ant Simulator.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Platformer"
+              "title": "Outline of Ant Simulator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -214,9 +214,12 @@
   },
   "active": "853c5b2895e278fa",
   "lastOpenFiles": [
-    "Personal Blog/The Cosmological Argument.md",
-    "Dev Blog/Ant Simulator.md",
     "Dev Blog/Space Dog Fight Game.md",
+    "Dev Blog/Space Dog Fight Game.md~",
+    "Dev Blog/space-dog-sine-graph.png",
+    "Dev Blog/Ant Simulator.md",
+    "test/1Test.md.md",
+    "Personal Blog/The Cosmological Argument.md",
     "Games/platformer-1.png",
     "Games/Platformer.md",
     "Dev Blog/Making a Website.md",
@@ -248,7 +251,6 @@
     "Pasted image 20250618130719.png",
     "games/platformer/Platformer.html.md",
     "Games/platformer/Platformer.html.md",
-    "Games/platformer",
     "Untitled/Untitled.md"
   ]
 }
