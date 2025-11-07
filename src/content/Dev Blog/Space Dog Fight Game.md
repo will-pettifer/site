@@ -163,5 +163,4 @@ public float Minor(float[,] mat, int c, int r)
 ```
 
 ### Quaternions
-
-
+I decided to use quaternions to represent rotation because they are faster and more reliable. It also made implementing a SLERP really easy.  

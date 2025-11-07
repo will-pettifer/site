@@ -16,6 +16,12 @@ text
 ###### h6
 We start by defining 3 categories of existence:1234567890.
 
+# h1
+
+## h2
+### h3
+hello
+
 - Necessary - a thing which must exist.
 - Impossible - a thing which must not exist.
 - Possible - a thing which can exist, but also has the possibility to not exist.

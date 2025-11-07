@@ -1,6 +1,8 @@
 ---
 date: 2025-07-08
 ---
+![](the-cosmo-1.png)
+
 >⚘ [Part 1](#part-1) </br>
 >⚘ [Part 2](#part-2) </br>
 >⚘ [Part 3](#part-3) </br>
@@ -93,3 +95,5 @@ It is also interesting to note that this is merely the most forceful among very 
 But much more importantly, this now leaves you with the inescapable conclusion that you are here for a reason. You are not some meaningless cosmological accident, you are the result of a deliberate decision by the same person that created the laws of physics, coded the human genome, created laughter, and created suffering. What is that purpose? Why did God create us?
 
 Thank you.
+
+![](the-cosmo-2.png)
