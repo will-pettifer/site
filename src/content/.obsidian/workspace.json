@@ -55,16 +55,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal Blog/The Cosmological Argument.md",
+                "file": "Dev Blog/Space Dog Fight Game.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Cosmological Argument"
+              "title": "Space Dog Fight Game"
+            }
+          },
+          {
+            "id": "41596d75359136b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Games/Caravan.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Caravan"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -185,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal Blog/The Cosmological Argument.md",
+                "file": "Games/Caravan.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Cosmological Argument"
+              "title": "Outline of Caravan"
             }
           }
         ],
@@ -212,16 +226,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "853c5b2895e278fa",
+  "active": "41596d75359136b0",
   "lastOpenFiles": [
+    "Dev Blog/Space Dog Fight Game.md",
+    "Games/Caravan.md",
+    "Dev Blog/Making a Website.md",
+    "Personal Blog/The Beauty of Monotheism.md",
+    "Personal Blog/The Cosmological Argument.md",
+    "Dev Blog/Ant Simulator.md",
+    "Dev Blog/ant-sim-ants.png",
+    "CV.md",
+    "Dev Blog/Space Dog Fight Game.md~",
     "Personal Blog/the-cosmo-3.png",
     "Personal Blog/the-cosmo-2.png",
     "Personal Blog/the-cosmo-1.png",
     "Personal Blog/cosmo-2.png",
     "test/Tes.md",
     "Personal Blog/cosmo-1.png",
-    "Dev Blog/Ant Simulator.md",
-    "Dev Blog/Space Dog Fight Game.md",
     "test/Test.md",
     "test/Test.md.md",
     "test/Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md",
@@ -238,17 +259,11 @@
     "test/Test.md copy copy copy copy.md",
     "test/Test.md copy copy.md",
     "test/Test.md copy.md",
-    "Dev Blog/Space Dog Fight Game.md~",
     "Dev Blog/space-dog-sine-graph.png",
-    "Personal Blog/The Cosmological Argument.md",
     "Games/platformer-1.png",
     "Games/Platformer.md",
-    "Dev Blog/Making a Website.md",
-    "Dev Blog/ant-sim-ants.png",
     "1Test.md.md",
-    "1Test.md copy.md",
     "Dev Blog/ant-sim-slow-unload.png",
-    "1Test.md copy copy copy copy copy.md",
     "Dev Blog/ant-sim-grid-nav.png",
     "1Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md~",
     "Test.md~",
@@ -258,7 +273,6 @@
     "Personal Blog",
     "Test",
     "Dev Blog",
-    "Writing",
-    "Pasted image 20250618130719.png"
+    "Writing"
   ]
 }

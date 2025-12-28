@@ -11,12 +11,12 @@ draft: true
 >&nbsp;&nbsp;&nbsp;⚘ [Vectors and Matrices](#vectors-and-matrices) </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Quaternions](#quaternions) </br>
 >
->Rendering: </br>
->&nbsp;&nbsp;&nbsp;⚘
->
 >Physics: </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Pheromone Grid](#pheromone-grid) </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Reflections](#reflections)
+>
+>Rendering: </br>
+>&nbsp;&nbsp;&nbsp;⚘
 
 This project was made using OpenGL/OpenTK and was written in C#. It includes basic 3D rendering and a physics engine. My aim with this project was to better understand the maths behind games and 3D rendering, so I avoided using external maths libraries. This meant I had to implement vectors, matrices, quaternions, and even my own sine function.
 
@@ -34,11 +34,11 @@ $$
 cos(y)\approx\frac{\pi^2-4y^2}{\pi^2+y^2}
 $$
 
-This produces this graph, where blue is cosine, red is the formula:
+This produces this graph, where blue is $cos(x)$, red is the formula:
 
 ![](space-dog-sine-graph.png)
 
-Which can then be translated to account for the lack of repetition of the curve:
+Which can then be translated to account for the lack of repetition in the curve:
 
 ```csharp
 public static float Sin(float rad) => Cos(rad - TauOver4);
@@ -69,7 +69,7 @@ public static float Cos(float rad)
 ```
 
 ### Vectors and Matrices
-I included 2D, 3D, and 4D vectors. For the matrix classes, I included 2x2 (which was basically just used for inverting 3x3 matrices), 3x3 (which was used for the physics), and 4x4 (which is essential for graphics). Contrary to what is typically done, I decided to store matrices by their columns rather than by their rows:
+I decided to store matrices by their columns rather than by their rows:
 
 ```csharp
 public class Mat4
@@ -79,19 +79,7 @@ public class Mat4
 }
 ```
 
-A 2D vector can be thought of as a scaling of the unit vectors, so you go along the x-axis by 4, and then along the y-axis by 3:
-
-$$
-4\begin{bmatrix}1\\0\end{bmatrix}+3\begin{bmatrix}0\\1\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}
-$$
-
-If the unit vectors are changed, then the vector is transformed into the space that those unit vectors now represent. These unit vectors can be represented as the columns of a matrix:
-
-$$
-\begin{bmatrix}1&0\\0&1\end{bmatrix}\begin{bmatrix}4\\3\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}
-$$
-
-This is how matrices represent the rotation, scaling, and shearing of the input vectors, but the actual transformation is just the multiplication of the columns by each component of the vector. This is why I stored the columns rather than the rows, and it made the multiplication much simpler:
+ made the multiplication very simple:
 
 ```csharp
 public static Mat3 operator *(Mat3 b, Mat3 a)
@@ -162,5 +150,119 @@ public float Minor(float[,] mat, int c, int r)
 }
 ```
 
+I also coded each part of the TRS matrix which is fed into the vertex shader:
+
+```csharp
+Shader0.SetMatrix4("model", translation * rotation * scale);
+```
+
+For rotation,  I stored rotation on `Body` as a quaternion, and then converted it into a matrix with the formula:
+
+$$
+R(q) =
+\begin{bmatrix}
+1 - 2(q_y^2 + q_z^2) & 2(q_x q_y - q_z q_w) & 2(q_x q_z + q_y q_w) \\
+2(q_x q_y + q_z q_w) & 1 - 2(q_x^2 + q_z^2) & 2(q_y q_z - q_x q_w) \\
+2(q_x q_z - q_y q_w) & 2(q_y q_z + q_x q_w) & 1 - 2(q_x^2 + q_y^2)
+\end{bmatrix}
+$$
+
+```csharp
+public static Mat4 Rotation(Quaternion q)
+{
+    q = q.Normalised();
+    float ySqr2 = 2 *  q.V.Y * q.V.Y;
+    float xSqr2 = 2 * q.V.X * q.V.X;
+    float zSqr2 = 2 * q.V.Z * q.V.Z;
+    float xy2 = 2 * q.V.X * q.V.Y;
+    float wz2 = 2 * q.W * q.V.Z;
+    float xz2 = 2 * q.V.X * q.V.Z;
+    float wy2 = 2 * q.W * q.V.Y;
+    float yz2 = 2 * q.V.Y * q.V.Z;
+    float wx2 = 2 * q.W * q.V.X;
+    
+    return new(
+        1f - (ySqr2 + zSqr2), xy2 + wz2, xz2 - wy2, 0f,
+        xy2 - wz2, 1 - (xSqr2 + zSqr2), yz2 + wx2, 0f,
+        xz2 + wy2, yz2 - wx2, 1 - (xSqr2 + ySqr2), 0f,
+        0f, 0f, 0f, 1f
+    );
+} 
+```
+
 ### Quaternions
-I decided to use quaternions to represent rotation because they are faster and more reliable. It also made implementing a SLERP really easy.  
+I decided to use quaternions to represent rotation because they are faster and more reliable. It also made implementing a SLERP really easy:
+
+```csharp
+public static Quaternion Slerp(Quaternion q1, Quaternion q2, float t)
+{
+    if (q1.MagnitudeSquared() == 0.0f)
+    {
+        if (q2.MagnitudeSquared() == 0.0f)
+        {
+            return Identity;
+        }
+    
+        return q2;
+    }
+    
+    if (q2.MagnitudeSquared() == 0.0f)
+    {
+        return q1;
+    }
+    
+    var cosHalfAngle = Dot(q1, q2);
+    
+    if (cosHalfAngle >= 1.0f || cosHalfAngle <= -1.0f)
+    {
+        return q1;
+    }
+    
+    if (cosHalfAngle < 0.0f)
+    {
+        q2 *= -1;
+        cosHalfAngle = -cosHalfAngle;
+    }
+    
+    float blendA;
+    float blendB;
+    if (cosHalfAngle < 0.99f)
+    {
+        float halfAngle = MathF.Acos(cosHalfAngle);
+        float sinHalfAngle = MathF.Sin(halfAngle);
+        float oneOverSinHalfAngle = 1.0f / sinHalfAngle;
+        blendA = MathF.Sin(halfAngle * (1.0f - t)) * oneOverSinHalfAngle;
+        blendB = MathF.Sin(halfAngle * t) * oneOverSinHalfAngle;
+    }
+    else
+    {
+        blendA = 1.0f - t;
+        blendB = t;
+    }
+    
+    Quaternion result = q1 * blendA + q2 * blendB;
+    if (result.MagnitudeSquared() > 0.0f)
+    {
+        return result.Normalised();
+    }
+    
+    return Identity;
+}
+```
+
+To get the enemies to point towards the player, I get the vector between them, normalise it, cross it with unit-y to generate a right-vector, then a new up-vector from those. These then become the columns of a matrix, which is converted into the quaternion to be SLERP-ed with the current rotation:
+
+```csharp
+public Quaternion ToQuat()
+{
+    Vec3 v = Normalised();
+    Vec3 right = Cross(v, UnitY);
+    Vec3 up = Cross(right, v);
+    Mat3 m = new(right, v, up);
+    return m.ToQuat();
+}
+```
+
+# Physics
+### Body
+
