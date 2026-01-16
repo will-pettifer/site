@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Games/Caravan.md",
+                "file": "Personal Blog/The Beauty of Monotheism.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Caravan"
+              "title": "The Beauty of Monotheism"
             }
           }
         ],
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Games/Caravan.md",
+                "file": "Personal Blog/The Beauty of Monotheism.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Caravan"
+              "title": "Outline of The Beauty of Monotheism"
             }
           }
         ],
@@ -228,12 +228,14 @@
   },
   "active": "41596d75359136b0",
   "lastOpenFiles": [
-    "Dev Blog/Space Dog Fight Game.md",
     "Games/Caravan.md",
-    "Dev Blog/Making a Website.md",
-    "Personal Blog/The Beauty of Monotheism.md",
+    "Games/Platformer.md",
     "Personal Blog/The Cosmological Argument.md",
+    "Personal Blog/The Beauty of Monotheism.md",
     "Dev Blog/Ant Simulator.md",
+    "Dev Blog/Space Dog Fight Game.md",
+    "Dev Blog/Making a Website.md",
+    "Games/caravan-1.png",
     "Dev Blog/ant-sim-ants.png",
     "CV.md",
     "Dev Blog/Space Dog Fight Game.md~",
@@ -261,10 +263,7 @@
     "test/Test.md copy.md",
     "Dev Blog/space-dog-sine-graph.png",
     "Games/platformer-1.png",
-    "Games/Platformer.md",
-    "1Test.md.md",
     "Dev Blog/ant-sim-slow-unload.png",
-    "Dev Blog/ant-sim-grid-nav.png",
     "1Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md~",
     "Test.md~",
     "Mamae.mp3",

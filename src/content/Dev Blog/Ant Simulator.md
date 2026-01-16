@@ -5,6 +5,7 @@ draft: false
 ![](ant-sim-ants.png)
 
 >[github.com/will-pettifer/AntSim](https://github.com/will-pettifer/AntSim)
+>https://will-pettifer.itch.io/antsim
 >
 >⚘ [Navigation](#navigation) </br>
 >⚘ [Pheromone Grid](#pheromone-grid) </br>

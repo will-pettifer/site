@@ -6,16 +6,16 @@ draft: true
 
 >[github.com/will-pettifer/SpaceDogFight](https://github.com/will-pettifer/SpaceDogFight)
 >
->Maths: </br>
+>**Maths** </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Sine](#sine) </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Vectors and Matrices](#vectors-and-matrices) </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Quaternions](#quaternions) </br>
 >
->Physics: </br>
+>**Physics** </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Pheromone Grid](#pheromone-grid) </br>
 >&nbsp;&nbsp;&nbsp;⚘ [Reflections](#reflections)
 >
->Rendering: </br>
+>**Rendering** </br>
 >&nbsp;&nbsp;&nbsp;⚘
 
 This project was made using OpenGL/OpenTK and was written in C#. It includes basic 3D rendering and a physics engine. My aim with this project was to better understand the maths behind games and 3D rendering, so I avoided using external maths libraries. This meant I had to implement vectors, matrices, quaternions, and even my own sine function.
@@ -79,7 +79,7 @@ public class Mat4
 }
 ```
 
- made the multiplication very simple:
+This made the multiplication very simple:
 
 ```csharp
 public static Mat3 operator *(Mat3 b, Mat3 a)
