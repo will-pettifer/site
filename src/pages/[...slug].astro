@@ -15,12 +15,14 @@ const { post } = Astro.props;
 
 <BaseLayout title={post.title}>
     <div class="article-title">
-        <span class="article-name">{post.title}</span> <br>
+        <h1 class="article-name">{post.title}</h1> <br>
         <span class="article-date"> {post.date.getDate()
             + '.' + (post.date.getMonth() + 1)
             + '.' + post.date.getFullYear()}</span>
+        <hr>
     </div>
     <article>
         <Fragment set:html={post.body} />
+        <hr>
     </article>
 </BaseLayout>

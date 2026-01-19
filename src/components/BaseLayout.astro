@@ -16,25 +16,31 @@ import Footer from "../components/Footer.astro";
             <div class="layout">
 
                 <nav class="sidenav">
-                    <Sidebar />
+                    <div class="sidenav-scroll">
+                        <Sidebar />
+                    </div>
                 </nav>
 
                 <div class="divider">
-                    H
 
-                    H
+                    <span class="divider-decor" style="top: -25px;">░</span>
+
+                    <div class="divider-box"></div>
+
+                    <span class="divider-decor" style="top: calc(100vh * 0.25);">░</span>
+
                 </div>
 
                 <div class="main-frame">
-                    <main>
-                        <slot />
-                    </main>
+                    <div class="main-scroll">
+                        <main>
+                            <slot />
+                        </main>
+
+                        <Footer />
+                    </div>
                 </div>
-
             </div>
-
-            <Footer />
-
         </div>
     </body>
 </html>
@@ -44,12 +50,13 @@ import Footer from "../components/Footer.astro";
         max-width: 1200px;
         margin: 0 auto;
         position: relative;
+        background: var(--background-color);
     }
 
     .layout {
         display: flex;
-        align-items: flex-start;
         justify-content: center;
+        height: 100vh;
     }
 
     .menu-toggle {
@@ -68,17 +75,22 @@ import Footer from "../components/Footer.astro";
     }
 
     .sidenav {
-        width: 300px;
+        flex: 0 0 300px;
         position: sticky;
-        margin: 60px 0 0 0;
-        top: 60px;
-        overflow-y: hidden;
-        max-height: calc(100vh - 80px);
+        direction: rtl;
+        height: 100vh;
+        overflow: hidden;
         background: var(--background-color);
-        z-index: 100;
-        flex-shrink: 0;
+    }
+
+    .sidenav-scroll {
+        padding-top: 90px;
+        height: calc(100vh - 90px);
+        overflow-y: auto;
+        min-height: 0;
     }
     .sidenav::before {
+        padding-top: 60px;
         content: "";
         position: absolute;
         top: 0;
@@ -94,29 +106,34 @@ import Footer from "../components/Footer.astro";
         );
     }
 
-    main {
+    .main-frame {
+        top: 0;
+        position: relative;
         flex: 0 1 800px;
-        max-width: 800px;
-        min-width: 0;
-        background: var(--background-color);
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .main-scroll {
+        padding-top: 0;
+        height: 100%;
+        overflow-y: auto;
+        min-height: 0;
     }
 
     .divider {
-        margin: 60px 0 0 0;
+        z-index: 200;
+        margin: 40px 0 0 0;
+        top: 40px;
         flex: 0 0 20px;
         width: 20px;
-        height: calc(100vh / 3); /* Make it fill the viewport height */
-        border-top: 2px dashed var(--accent-color);
-        border-bottom: 2px dashed var(--accent-color);
         position: sticky;
-        top: 100px; /* Match the margin-top */
         align-self: flex-start;
     }
     .divider::before {
         content: "";
         position: absolute;
-        height: calc(100vh * 0.8);
-        top: -10%;
+        height: calc(100vh * 0.7);
         right: 0;
         width: 1px;
         background: repeating-linear-gradient(
@@ -126,6 +143,21 @@ import Footer from "../components/Footer.astro";
                 transparent 0.2rem,
                 transparent 0.4rem
         );
+    }
+
+    .divider-box {
+        position: relative;
+        height: calc(100vh * 0.4);
+        border-top: 1px dashed var(--accent-color);
+        border-bottom: 1px dashed var(--accent-color);
+        top: 35px;
+    }
+
+    .divider-decor {
+        user-select: none;
+        left: 0.8em;
+        font-size: 0.7em;
+        position: relative;
     }
 
     /* Tablet/Small Desktop: Nav overlays content */
