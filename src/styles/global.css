@@ -169,16 +169,20 @@ body {
     margin: 0;
     padding: 0;
     text-align: left;
-    background-color: var(--background-color-2);
+    background-color: var(--background-color);
     word-wrap: break-word;
     word-spacing: 0.1em;
     overflow-wrap: break-word;
     line-height: 1.6;
     color: var(--text-color);
 }
-hr {
-    border: 1px solid var(--accent-color);
+
+main {
+    padding-top: 1px;
+    padding-bottom: 2em;
+    background-color: var(--background-color);
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-secondary), serif;
     font-weight: 500;
@@ -206,20 +210,22 @@ h6{
     font-size: 1.2em;
 }
 
-img, image, picture{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.3em;
-    border: 1px solid var(--accent-color);
-}
-
-aside, footer{
+aside{
     color: var(--code-color);
     font-family: var(--font-code), monospace;
 }
+
+hr {
+    border: 1px solid var(--accent-color);
+}
+
+a {
+    color: var(--link-color);
+}
+a:hover {
+    color: var(--code-color);
+}
+
 code{
     background-color: var(--code-background-color);
     border-radius: 0.3em;
@@ -245,6 +251,9 @@ blockquote {
     background: var(--background-color-2)
 }
 
+ul{
+    list-style-type: "⚘  ";
+}
 
 table {
     display: block;
@@ -278,6 +287,16 @@ table::after{
     height: 8px;
 }
 
+img, image, picture{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+    border: 1px solid var(--accent-color);
+}
+
 .video-container {
     border: 1px solid var(--accent-color);
     border-radius: 0.3em;
@@ -294,19 +313,12 @@ table::after{
     margin: 0 0.15em;
 }
 
-
-main {
-    padding-top: 1px;
-    padding-bottom: 2em;
-    background-color: var(--background-color);
+article {
+    margin: 20px;
 }
-
 .article-title {
-    background-color: var(--background-color-2);
     border-bottom: 1px solid var(--accent-color);
     margin: 0 auto;
-}
-.article-title-content {
     padding: 1em;
 }
 .article-name {
@@ -318,138 +330,4 @@ main {
 .article-date {
     color: var(--code-color);
     font: 0.9em var(--font-code), monospace;
-}
-
-.centred-content {
-    max-width: var(--width);
-    margin: 0 auto;
-}
-@media (max-width: 1380px) {
-    .centred-content {
-        margin-left: 300px !important;
-    }
-    .centred-content.collapsed {
-        margin: 0 auto !important;
-    }
-}
-@media (max-width: 1080px) {
-    .centred-content, .centred-content.collapsed {
-        margin: 0 auto !important;
-    }
-}
-
-article {
-    margin: 20px;
-}
-
-a {
-    color: var(--link-color);
-}
-a:hover {
-    color: var(--code-color);
-}
-
-.sidebar-content {
-    height: 100%;
-    overflow-y: auto;
-    padding: 4em 1em 2em 1em;
-    box-sizing: border-box;
-}
-@media (max-width: 1080px) {
-    .sidebar-content {
-        padding: 1em 1em 2em 1em;
-    }
-}
-
-footer {
-    background-color: var(--background-color-2);
-    border-top: 1px solid var(--accent-color);
-}
-.footer-content {
-    padding: 1em 1em 2em 1em;
-    text-align: center;
-    color: var(--code-color);
-    word-spacing: normal;
-}
-
-.toggle-btn {
-    position: fixed;
-    border: 1px solid var(--accent-color);
-    border-radius: 0.3em;
-    left: 20px;
-    top: 20px;
-    z-index: 100;
-    color: var(--heading-color);
-    font-size: 25px;
-    background: var(--background-color);
-    cursor: pointer;
-    padding: 3px 8px;
-    font-weight: 700;
-}
-@media (max-width: 1080px) {
-    .toggle-btn {
-        top: auto;
-        left: auto;
-        right: 20px;
-        bottom: 60px;
-        transform: scaleX(-1);
-    }
-    .toggle-btn.collapsed {
-        transform: scaleX(1)!important;
-    }
-}
-.toggle-btn:hover {
-    color: var(--link-color);
-    background: var(--accent-color) !important;
-    border-color: var(--link-color);
-}
-.toggle-btn.collapsed {
-    transform: scaleX(-1);
-    background: var(--background-color-2);
-}
-
-
-ul{
-    list-style-type: "⚘  ";
-}
-.sidebar-ul{
-    font-family: var(--font-secondary), serif;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.caret{
-    cursor: pointer;
-    user-select: none;
-    font-weight: 500;
-    font-size: 1.2em;
-    line-height: 2;
-    color: var(--heading-color)
-}
-
-.caret:hover{
-    color: var(--link-color);
-}
-
-.caret::before {
-    content: "🌿";
-    display: inline-block;
-    margin-right: 6px;
-    transform: rotate(60deg);
-    padding: 2px;
-}
-
-.caret-down::before {
-    transform: rotate(150deg);
-}
-
-.nested {
-    display: none;
-    list-style-type: "⚘ ";
-    font-weight: 400;
-    font-family: var(--font-main), sans-serif;
-}
-
-.active {
-    display: block;
 }

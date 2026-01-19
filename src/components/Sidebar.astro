@@ -47,14 +47,80 @@ posts.forEach(post => {
     </ul>
 </div>
 
+
 <style>
     a {
         color: var(--text-color);
         text-decoration: none;
         user-select: none;
-        font-style: italic;
     }
     a:hover {
         color: var(--link-color);
+    }
+
+    .sidebar-content {
+        max-height: calc(100vh - 80px);
+        overflow-y: scroll;
+        direction: rtl;
+        padding: 4em 1em 2em 1em;
+        text-align: right;
+    }
+    @media (max-width: 1080px) {
+        .sidebar-content {
+            padding: 1em 1em 2em 1em;
+        }
+    }
+
+    .sidebar-ul{
+        font-family: var(--font-code), monospace;
+        direction: ltr;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .caret{
+        cursor: pointer;
+        user-select: none;
+        color: var(--heading-color);
+    }
+    .caret:hover{
+        color: var(--link-color);
+    }
+
+    .caret::after {
+        content: " [+]";
+        font-size: 0.8em;
+        right: 0;
+    }
+
+    .caret-down::after {
+        content: " [-]";
+    }
+    .nested {
+        display: none;
+        list-style: none;
+        font-weight: 400;
+        font-family: var(--font-main), sans-serif;
+        padding-right: 0;
+    }
+
+    .nested li {
+        position: relative;
+        padding-right: 1.2em;
+        margin: 0 0;
+    }
+
+    .nested li::after {
+        content: "";
+        position: absolute;
+        top: 0.7em;
+        right: -1em;
+        width: 4px;
+        height: 4px;
+        background: currentColor;
+    }
+    .active {
+        display: block;
     }
 </style>

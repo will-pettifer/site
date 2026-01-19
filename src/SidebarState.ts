@@ -19,7 +19,7 @@ class SidebarState {
     }
 
     private setupEventListeners() {
-        const toggleBtn = document.querySelector('.toggle-btn');
+        const toggleBtn = document.querySelector('.menu-toggle');
         toggleBtn?.addEventListener('click', () => this.toggleSidebar());
 
         const togglers = document.getElementsByClassName('caret');
@@ -30,12 +30,10 @@ class SidebarState {
 
     private toggleSidebar() {
         const sidenav = document.querySelector('.sidenav');
-        const toggleBtn = document.querySelector('.toggle-btn');
-        const centredContents = document.querySelectorAll('.centred-content');
+        const toggleBtn = document.querySelector('.menu-toggle');
 
         const isCollapsed = sidenav?.classList.toggle('collapsed');
         toggleBtn?.classList.toggle('collapsed');
-        centredContents.forEach(content => content.classList.toggle('collapsed'));
 
         localStorage.setItem(SidebarState.STORAGE_KEYS.COLLAPSED, String(isCollapsed));
     }
@@ -51,17 +49,14 @@ class SidebarState {
 
     private toggleCollapsed(value: boolean) {
         const sidenav = document.querySelector('.sidenav');
-        const toggleBtn = document.querySelector('.toggle-btn');
-        const centredContents = document.querySelectorAll('.centred-content');
+        const toggleBtn = document.querySelector('.menu-toggle');
 
         if (value) {
             sidenav?.classList.add('collapsed');
             toggleBtn?.classList.add('collapsed');
-            centredContents.forEach(content => content.classList.add('collapsed'));
         } else {
             sidenav?.classList.remove('collapsed');
             toggleBtn?.classList.remove('collapsed');
-            centredContents.forEach(content => content.classList.remove('collapsed'));
         }
     }
 

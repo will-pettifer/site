@@ -10,42 +10,152 @@ import Footer from "../components/Footer.astro";
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
     <body>
-        <button class="toggle-btn" aria-label="Toggle Sidebar"><<</button>
-        <div class="layout">
-            <div class="sidenav">
-                <Sidebar />
+        <button class="menu-toggle" aria-label="Toggle Sidebar"><<</button>
+
+        <div class="container">
+            <div class="layout">
+
+                <nav class="sidenav">
+                    <Sidebar />
+                </nav>
+
+                <div class="divider">
+                    H
+
+                    H
+                </div>
+
+                <div class="main-frame">
+                    <main>
+                        <slot />
+                    </main>
+                </div>
+
             </div>
-            <slot />
+
             <Footer />
+
         </div>
     </body>
 </html>
 
 <style>
-    .sidenav {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .layout {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        display: none;
         position: fixed;
-        height: 100vh;
-        overflow-y: hidden;
-        z-index: 1;
+        top: 20px;
+        left: 20px;
+        z-index: 200;
+        background: var(--background-color);
+        padding: 12px 16px;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+        background: var(--background-color-2);
+    }
+
+    .sidenav {
         width: 300px;
-        border-right: 1px solid var(--accent-color);
-        border-radius: 0;
-        background: var(--background-color-2)
+        position: sticky;
+        margin: 60px 0 0 0;
+        top: 60px;
+        overflow-y: hidden;
+        max-height: calc(100vh - 80px);
+        background: var(--background-color);
+        z-index: 100;
+        flex-shrink: 0;
     }
-    .sidenav.collapsed {
-        width: 0;
-        border: none;
+    .sidenav::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 1px;
+        background: repeating-linear-gradient(
+                to bottom,
+                var(--accent-color),
+                var(--accent-color) 0.2rem,
+                transparent 0.2rem,
+                transparent 0.4rem
+        );
     }
+
+    main {
+        flex: 0 1 800px;
+        max-width: 800px;
+        min-width: 0;
+        background: var(--background-color);
+    }
+
+    .divider {
+        margin: 60px 0 0 0;
+        flex: 0 0 20px;
+        width: 20px;
+        height: calc(100vh / 3); /* Make it fill the viewport height */
+        border-top: 2px dashed var(--accent-color);
+        border-bottom: 2px dashed var(--accent-color);
+        position: sticky;
+        top: 100px; /* Match the margin-top */
+        align-self: flex-start;
+    }
+    .divider::before {
+        content: "";
+        position: absolute;
+        height: calc(100vh * 0.8);
+        top: -10%;
+        right: 0;
+        width: 1px;
+        background: repeating-linear-gradient(
+                to bottom,
+                var(--accent-color),
+                var(--accent-color) 0.2rem,
+                transparent 0.2rem,
+                transparent 0.4rem
+        );
+    }
+
+    /* Tablet/Small Desktop: Nav overlays content */
     @media (max-width: 1080px) {
-        .sidenav {
-            right: 0;
-            height: 80vh;
-            border: 1px solid var(--accent-color);
-            border-radius: 0.3em;
-            margin: 10px;
+        .menu-toggle {
+            display: block;
         }
-        h1 {
-            margin-top: 0;
+
+        .container {
+            max-width: 100%;
+        }
+
+        .layout {
+            justify-content: center;
+            gap: 0;
+        }
+
+        .sidenav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            transform: translateX(-100%);
+        }
+
+        .sidenav:not(.collapsed) {
+            transform: translateX(0);
+        }
+
+        main {
+            margin: 0 auto;
         }
     }
 </style>

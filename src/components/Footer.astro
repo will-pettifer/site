@@ -52,6 +52,18 @@ const today = new Date()
     </div>
 </footer>
 <style>
+    footer{
+        color: var(--code-color);
+        font-family: var(--font-code), monospace;
+        border-top: 1px solid var(--accent-color);
+    }
+    .footer-content {
+        padding: 1em 1em 2em 1em;
+        text-align: center;
+        color: var(--code-color);
+        word-spacing: normal;
+    }
+
     a{
         text-decoration: none;
         color: var(--code-color);
@@ -60,6 +72,7 @@ const today = new Date()
     a:hover{
         color: var(--link-color);
     }
+
     .social-links{
         display: flex;
         justify-content: center;
