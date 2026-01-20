@@ -21,9 +21,10 @@ posts.forEach(post => {
 
 <div class="sidebar-content">
     <h3>
-        <a href="/site/" style="color: var(--heading-color)">
-            Will-Pettifer&nbsp
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
+        <a href="/site/" style="color: var(--text-yellow)">
+            Will-Pettifer
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32"
+                 style="filter: drop-shadow(0 0 2px var(--accent-color))">
                 <path
                         fill="currentColor"
                         d={SITE_ICON}>
@@ -47,14 +48,82 @@ posts.forEach(post => {
     </ul>
 </div>
 
+
 <style>
     a {
         color: var(--text-color);
         text-decoration: none;
         user-select: none;
-        font-style: italic;
     }
     a:hover {
         color: var(--link-color);
+    }
+
+    .sidebar-content {
+        direction: rtl;
+        padding: 1em;
+        text-align: right;
+        word-spacing: normal;
+    }
+
+    .sidebar-ul{
+        font-family: var(--font-code), monospace;
+        direction: ltr;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .caret{
+        cursor: pointer;
+        user-select: none;
+        color: var(--text-green);
+        font-weight: bold;
+        text-shadow: 0 0 2px var(--accent-color);
+    }
+    .caret:hover{
+        color: var(--link-color);
+    }
+
+    .caret::after {
+        content: "+";
+        font-size: 0.8em;
+        position: relative;
+        left: 0.5em;
+        padding: 0;
+        margin: 0;
+    }
+
+    .caret-down::after {
+        content: "-";
+    }
+    .nested {
+        display: none;
+        list-style: none;
+        font-weight: 400;
+        font-size: 0.9em;
+        font-family: var(--font-code), monospace;
+        font-style: italic;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nested li {
+        position: relative;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nested li::after {
+        content: "";
+        position: absolute;
+        top: 0.7em;
+        right: -1.1em;
+        width: 4px;
+        height: 4px;
+        background: var(--text-green);
+    }
+    .active {
+        display: block;
     }
 </style>

@@ -4,6 +4,7 @@ export interface Post {
     date: Date;
     body: string;
     url: string;
+    order: number;
 }
 
 export async function getPosts(): Promise<Post[]> {
@@ -21,12 +22,18 @@ export async function getPosts(): Promise<Post[]> {
             date,
             draft: post.frontmatter?.draft || false,
             body: post.compiledContent(),
-            url: '/site/' + slug
+            url: '/site/' + slug,
+            order: post.frontmatter?.order ?? 0
         };
     }).filter(post => {
         return import.meta.env.PROD ? !post.draft : true;
     }).map(({draft, ...post}) => post)
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        .sort((a, b) => {
+            if (a.order !== b.order) {
+                return b.order - a.order;
+            }
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
 }
 
 export async function getPostsMetadata(): Promise<Omit<Post, 'body'>[]> {
