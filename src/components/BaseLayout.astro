@@ -6,11 +6,11 @@ import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-    <head>
+    <head title = {SITE_TITLE}>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
     <body>
-        <button class="menu-toggle" aria-label="Toggle Sidebar"><<</button>
+        <button class="menu-toggle" aria-label="Toggle Sidebar">☰</button>
 
         <div class="container">
             <div class="layout">
@@ -23,11 +23,11 @@ import Footer from "../components/Footer.astro";
 
                 <div class="divider">
 
-                    <span class="divider-decor" style="top: -25px;">░</span>
+                    <span class="divider-decor" style="top: -25px;">✿</span>
 
                     <div class="divider-box"></div>
 
-                    <span class="divider-decor" style="top: calc(100vh * 0.25);">░</span>
+                    <span class="divider-decor" style="top: calc(100vh * 0.25);">✿</span>
 
                 </div>
 
@@ -62,20 +62,27 @@ import Footer from "../components/Footer.astro";
     .menu-toggle {
         display: none;
         position: fixed;
-        top: 20px;
-        left: 20px;
+        bottom: 20px;
+        right: 20px;
         z-index: 200;
+        font-size: 2.2em;
+        color: var(--text-color);
+        font-family: var(--font-code), monospace;
+        border: 1px solid var(--accent-color);
+        border-radius: 0.1em;
         background: var(--background-color);
-        padding: 12px 16px;
+        padding: 0 0.3em;
         cursor: pointer;
     }
 
     .menu-toggle:hover {
         background: var(--background-color-2);
+        color: var(--link-color);
     }
 
     .sidenav {
-        flex: 0 0 300px;
+        flex: 0 0 280px;
+        z-index: 100;
         position: sticky;
         direction: rtl;
         height: 100vh;
@@ -155,13 +162,13 @@ import Footer from "../components/Footer.astro";
 
     .divider-decor {
         user-select: none;
-        left: 0.8em;
-        font-size: 0.7em;
+        left: 0.5em;
+        //font-size: em;
         position: relative;
     }
 
     /* Tablet/Small Desktop: Nav overlays content */
-    @media (max-width: 1080px) {
+    @media (max-width: 1100px) {
         .menu-toggle {
             display: block;
         }
@@ -175,11 +182,26 @@ import Footer from "../components/Footer.astro";
             gap: 0;
         }
 
+        .divider{
+            display: none;
+        }
+
         .sidenav {
             position: fixed;
             top: 40px;
-            left: 0;
-            transform: translateX(-100%);
+            right: 20px;
+            height: 80%;
+            width: 280px;
+            padding-top: 0;
+            border: 1px solid var(--accent-color);
+            border-right: none;
+            border-radius: 0.2em;
+            transform: translateX(+200%);
+        }
+
+        .sidenav-scroll{
+            padding:0;
+            height: 100%;
         }
 
         .sidenav:not(.collapsed) {

@@ -219,32 +219,32 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     color: var(--heading-color);
     margin-bottom: -0.5em;
-    margin-top: 0;
     text-shadow:
             0 0 2px var(--accent-color);
 }
 h1{
     font-size: 2.5em;
-    margin-bottom: 0;
-    color: var(--text-teal);
+    color: var(--text-green);
 }
 h2{
     font-size: 2em;
-    color: var(--text-green)
+    color: var(--text-teal)
 }
 h3{
     font-size: 1.8em;
-    color: var(--text-pink);
+    color: var(--text-green);
 }
 h4{
     font-size: 1.6em;
-    color: var(--text-yellow);
+    color: var(--text-teal);
 }
 h5{
     font-size: 1.4em;
+    color: var(--text-green);
 }
 h6{
     font-size: 1.2em;
+    color: var(--text-teal);
 }
 
 aside{
@@ -293,8 +293,10 @@ code{
 }
 
 blockquote {
-    padding: 5px 1em;
-    margin: 0;
+    margin: 1em 0 1em 0;
+    padding-left: 1em;
+    border-radius: 0.2em;
+    border: 1px solid var(--accent-color);
     border-left: 2px solid var(--code-color);
     background: var(--background-color-2)
 }
@@ -306,6 +308,9 @@ ul{
 table {
     display: block;
     overflow-x: auto;
+
+    border-radius: 0.2em;
+    border: 1px solid var(--accent-color);
     border-collapse: collapse;
     font-family: var(--font-code), monospace;
     color: var(--code-color);
@@ -341,7 +346,7 @@ img, image, picture{
     display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 0.3em;
+    border-radius: 0.2em;
     border: 1px solid var(--accent-color);
 }
 

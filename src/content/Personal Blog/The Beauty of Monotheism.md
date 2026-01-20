@@ -1,6 +1,7 @@
 ---
 date: 2025-10-26
 draft: true
+order: "1"
 ---
 Following on from what we tried to establish in *The Cosmological Argument*, the question of how God communicates with us suddenly becomes very important. It seems natural then to begin by examining religion, given that most religions claim to have this line of communication, and that the vast majority of human beings are religious.
 
