@@ -5,7 +5,7 @@ order: "1001"
 ---
 ![](caravan-1.png)
 
->https://will-pettifer.itch.io/caravan
+>[will-pettifer.itch.io/caravan](https://will-pettifer.itch.io/caravan)
 
 This is a simple card game! Click <a href='/site/games/caravan/caravan.html' target=blank>here</a> to play in-browser.
 

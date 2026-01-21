@@ -6,12 +6,13 @@ order: "2001"
 ![](ant-sim-ants.png)
 
 >[github.com/will-pettifer/AntSim](https://github.com/will-pettifer/AntSim)
->https://will-pettifer.itch.io/antsim
 >
->⚘ [Navigation](#navigation) </br>
->⚘ [Pheromone Grid](#pheromone-grid) </br>
->⚘ [Vectors](#vectors) </br>
->⚘ [Reflections](#reflections)
+>[will-pettifer.itch.io/antsim](https://will-pettifer.itch.io/antsim)
+>
+>- [Navigation](#navigation)
+>- [Pheromone Grid](#pheromone-grid)
+>- [Vectors](#vectors)
+>- [Reflections](#reflections)
 
 This project was made using SFML and OpenMP. It simulates an ant colony, where ants leave their nest, search for food while depositing pheromones, and then use those pheromones to find a way home. This project was a great introduction to parallel programming, but more importantly it was the first time I had finished a project in C++.
 

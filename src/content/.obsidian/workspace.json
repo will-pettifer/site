@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Games/Caravan.md",
+                "file": "Dev Blog/Pipeworks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Caravan"
+              "title": "Pipeworks"
             }
           }
         ],
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Games/Caravan.md",
+                "file": "Dev Blog/Pipeworks.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Caravan"
+              "title": "Outline of Pipeworks"
             }
           }
         ],
@@ -228,25 +228,29 @@
   },
   "active": "41596d75359136b0",
   "lastOpenFiles": [
-    "Games/caravan-1.png",
-    "Dev Blog/Space Dog Fight Game.md",
     "Dev Blog/Ant Simulator.md",
-    "Dev Blog/Making a Website.md",
+    "Dev Blog/Pipeworks.md",
+    "Dev Blog/pipeworks-bezier.gif",
+    "Dev Blog/pipeworks-bezier.gif",
+    "Dev Blog/pipeworks-pipes.png",
+    "Dev Blog/pipeworks-twist.png",
+    "test/Test.md.md",
+    "test/Tes.md",
+    "Dev Blog/pipeworks-curve-vertices.png",
+    "Dev Blog/Space Dog Fight Game.md",
     "Games/Caravan.md",
-    "Games/Platformer.md",
+    "CV.md",
     "Personal Blog/The Cosmological Argument.md",
     "Personal Blog/The Beauty of Monotheism.md",
+    "Games/Platformer.md",
+    "Dev Blog/Making a Website.md",
+    "Games/caravan-1.png",
     "Dev Blog/ant-sim-ants.png",
-    "CV.md",
     "Dev Blog/Space Dog Fight Game.md~",
     "Personal Blog/the-cosmo-3.png",
     "Personal Blog/the-cosmo-2.png",
     "Personal Blog/the-cosmo-1.png",
-    "Personal Blog/cosmo-2.png",
-    "test/Tes.md",
-    "Personal Blog/cosmo-1.png",
     "test/Test.md",
-    "test/Test.md.md",
     "test/Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md",
     "test/Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy.md",
     "test/Test.md copy copy copy copy copy copy copy copy copy copy copy.md",
@@ -260,10 +264,6 @@
     "test/Test.md copy copy copy.md",
     "test/Test.md copy copy copy copy.md",
     "test/Test.md copy copy.md",
-    "test/Test.md copy.md",
-    "Dev Blog/space-dog-sine-graph.png",
-    "Games/platformer-1.png",
-    "Dev Blog/ant-sim-slow-unload.png",
     "1Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md~",
     "Test.md~",
     "Mamae.mp3",

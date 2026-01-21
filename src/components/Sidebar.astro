@@ -7,6 +7,11 @@ const postsByCategory: Record<string, Array<{title: string, url: string}>> = {};
 posts.forEach(post => {
     const parts = post.slug.split('/');
     const category = parts.length > 1 ? parts[0] : 'Other';
+
+    if (category === 'Personal Blog') {
+        return;
+    }
+
     if (!postsByCategory[category]) {
         postsByCategory[category] = [];
     }

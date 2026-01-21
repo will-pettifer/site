@@ -7,21 +7,30 @@ order: "2002"
 
 >[github.com/will-pettifer/SpaceDogFight](https://github.com/will-pettifer/SpaceDogFight)
 >
->**Maths** </br>
->&nbsp;&nbsp;&nbsp;⚘ [Sine](#sine) </br>
->&nbsp;&nbsp;&nbsp;⚘ [Vectors and Matrices](#vectors-and-matrices) </br>
->&nbsp;&nbsp;&nbsp;⚘ [Quaternions](#quaternions) </br>
+>[will-pettifer.itch.io/space-dog-fight-game](https://will-pettifer.itch.io/space-dog-fight-game)
 >
->**Physics** </br>
->&nbsp;&nbsp;&nbsp;⚘ [Pheromone Grid](#pheromone-grid) </br>
->&nbsp;&nbsp;&nbsp;⚘ [Reflections](#reflections)
+>**Solar System**
+>- 
 >
->**Rendering** </br>
->&nbsp;&nbsp;&nbsp;⚘
+>**Maths**
+>- [Sine](#sine)
+>- [Vectors and Matrices](#vectors-and-matrices)
+>- [Quaternions](#quaternions)
+>
+>**Physics** 
+>- [Pheromone Grid](#pheromone-grid)
+>- [Reflections](#reflections)
+>
+>**Rendering**
+>- what
 
 This project was made using OpenGL/OpenTK and was written in C#. It includes basic 3D rendering and a physics engine. My aim with this project was to better understand the maths behind games and 3D rendering, so I avoided using external maths libraries. This meant I had to implement vectors, matrices, quaternions, and even my own sine function.
 
-# Maths
+## Solar System
+### 
+Pretty littel baby
+
+## Maths
 ### Sine
 I reviewed a few different options for this, such as a Taylor series or a CORDIC algorithm, but in the end I decided this would be the simplest. I used Bhāskara I's sine approximation, which is a really simple formula:
 
@@ -264,6 +273,6 @@ public Quaternion ToQuat()
 }
 ```
 
-# Physics
+## Physics
 ### Body
 
