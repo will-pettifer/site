@@ -1,34 +1,90 @@
 ---
 date: 2025-06-30
-draft: true
+draft: false
 order: "2002"
 ---
-# !!! WIP !!!
+![](space-dog-wide.png)
 
 >[github.com/will-pettifer/SpaceDogFight](https://github.com/will-pettifer/SpaceDogFight)
 >
 >[will-pettifer.itch.io/space-dog-fight-game](https://will-pettifer.itch.io/space-dog-fight-game)
 >
->**Solar System**
->- 
->
->**Maths**
+>- [Placing Planets](#placing-planets)
 >- [Sine](#sine)
 >- [Vectors and Matrices](#vectors-and-matrices)
 >- [Quaternions](#quaternions)
->
->**Physics** 
->- [Pheromone Grid](#pheromone-grid)
 >- [Reflections](#reflections)
->
->**Rendering**
->- what
 
 This project was made using OpenGL/OpenTK and was written in C#. It includes basic 3D rendering and a physics engine. My aim with this project was to better understand the maths behind games and 3D rendering, so I avoided using external maths libraries. This meant I had to implement vectors, matrices, quaternions, and even my own sine function.
 
+For this write-up, I have left out the work on implementing OpenTK and the physics engine, because although they represented the bulk of my efforts here, there isn't much to say as my implementations are well known solutions.
+
+<iframe class="video-container" height="427" src="https://www.youtube.com/embed/eyYFLkHYqUo" title="space-dog-demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+![](space-dog-swarm.png)
+
 ## Solar System
-### 
-Pretty littel baby
+### Placing Planets
+To begin with, planet locations are set by scaling a random direction vector by the incremental distance from the star:
+
+```csharp
+distanceFromSun += Maths.RandomFloat(400f, 700f);
+
+float planetDirectionRad = Maths.RandomFloat(0f, Maths.Tau);  
+Vec2 planetDirection = new Vec2(Maths.Cos(planetDirectionRad),
+	Maths.Sin(planetDirectionRad));
+
+Vec3 planetPosition = new Vec3(planetDirection.X,
+	Maths.RandomFloat(-0.1f,0.1f),
+	planetDirection.Y  
+    ) * distanceFromSun;
+```
+
+Then, in order to maintain semi-stable orbits, the correct velocities need to be set. For solo planets this is very simple, as orbital velocity is just:
+
+$$
+v=\sqrt{\frac{G \cdot M}{r}}
+$$
+
+However, for moons and binary planets, they need to be made to orbit each other as well as the star. This means that the orbital velocity around the sun needs to be calculated for their combined mass, and using the barycentre, which is the centre of mass of the two planets. Then, the velocities are calculated using:
+
+$$
+v_A = \sqrt{\frac{G \cdot M_B \cdot r_A}{d^2}}
+$$
+
+Or in code:
+```csharp
+float planetARadius = Maths.RandomFloat(3f, 40f);  
+float planetBRadius = Maths.RandomFloat(3f, 40f);  
+  
+Planet planetA = new Planet(planetARadius);  
+Planet planetB = new Planet(planetBRadius);  
+  
+float distance = planetARadius + planetBRadius + Maths.RandomFloat(5f, 20f);  
+  
+float baryDistanceA = planetB.GetMass() / (planetB.GetMass() + planetA.GetMass()) * distance;  
+float baryDistanceB = planetA.GetMass() / (planetA.GetMass() + planetB.GetMass()) * distance;  
+  
+planetA.Position = planetPosition + new Vec3(baryDistanceA, 0, 0);  
+planetB.Position = planetPosition - new Vec3(baryDistanceB, 0, 0);  
+  
+float binaryVelocityA = MathF.Sqrt(  
+    Scene.G * planetB.GetMass() / (distance * distance) * baryDistanceA);  
+float binaryVelocityB = MathF.Sqrt(  
+    Scene.G * planetA.GetMass() / (distance * distance) * baryDistanceB);  
+  
+planetA.Velocity = new Vec3(0, 0, -binaryVelocityA);  
+planetB.Velocity = new Vec3(0, 0, binaryVelocityB);  
+  
+orbitalVelocity = MathF.Sqrt(Scene.G * sun.GetMass() / distanceFromSun);  
+orbitalDirection = new Vec3(  
+    Maths.RotateVector(planetDirection, 90f).X,  
+    0,  
+    Maths.RotateVector(planetDirection, 90f).Y);  
+  
+planetA.Velocity += orbitalDirection * orbitalVelocity;  
+planetB.Velocity += orbitalDirection * orbitalVelocity;
+```
 
 ## Maths
 ### Sine
@@ -260,7 +316,7 @@ public static Quaternion Slerp(Quaternion q1, Quaternion q2, float t)
 }
 ```
 
-To get the enemies to point towards the player, I get the vector between them, normalise it, cross it with unit-y to generate a right-vector, then a new up-vector from those. These then become the columns of a matrix, which is converted into the quaternion to be SLERP-ed with the current rotation:
+To get the enemies to point towards the player, I get the vector between them, normalise it, cross it with $\hat{j}$ to generate a right vector, then a new up vector from those. These then become the columns of a matrix, which is converted into the quaternion to be SLERP-ed with the current rotation:
 
 ```csharp
 public Quaternion ToQuat()
@@ -273,6 +329,5 @@ public Quaternion ToQuat()
 }
 ```
 
-## Physics
-### Body
-
+### Reflections
+I have learned more on this project than any other since I started learning how to code in the spring of 2023. Building a physics engine and 3D renderer from the ground up covers so many areas. I had to learn some linear algebra, quaternions, collisions, rigid body physics, shaders, the graphics pipeline, etc. All of these areas are foundational in the industry, and while I have a lot left to learn, I hope that this has given me a strong foundation.

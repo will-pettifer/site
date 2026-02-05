@@ -8,9 +8,9 @@ posts.forEach(post => {
     const parts = post.slug.split('/');
     const category = parts.length > 1 ? parts[0] : 'Other';
 
-    if (category === 'Personal Blog') {
-        return;
-    }
+    // if (category === 'Personal Blog') {
+    //     return;
+    // }
 
     if (!postsByCategory[category]) {
         postsByCategory[category] = [];

@@ -7,8 +7,7 @@ order: "1001"
 
 >[will-pettifer.itch.io/caravan](https://will-pettifer.itch.io/caravan)
 
-This is a simple card game! Click <a href='/site/games/caravan/caravan.html' target=blank>here</a> to play in-browser.
-
+This is a simple card game! Click <a href='/site/games/caravan/caravan.html' target=blank>here</a> to play in-browser, or visit [itch.io](https://will-pettifer.itch.io/caravan) to download!
 ### Rules
 The players compete to sell as many lots as they can. They take it in turns either moving a card from their caravan into one of their three lots, or moving a card from one lot to another. If 2 cards add up to 10, they add up to 20. The game ends when there is one valid lot at each of the three trading posts. Valid lots are:
 
