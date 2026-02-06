@@ -1,6 +1,6 @@
 ---
 date: 2025-07-08
-order: "0"
+order: "1"
 ---
 ![](the-cosmo-1.png)
 

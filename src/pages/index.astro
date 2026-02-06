@@ -8,46 +8,44 @@ import Card from "../components/Card.astro";
 ---
 
 <BaseLayout>
-    <main class="main">
-        <div class="article-title">
-            <h1 class="article-name" style="margin-bottom: 0.1em">Welcome! 🌿︎</h1>
-            <hr>
+    <div class="article-title">
+        <h1 class="article-name" style="margin-bottom: 0.1em">Welcome! 🌿︎</h1>
+        <hr>
+    </div>
+    <article>
+        <p>
+            Hi, I'm Will, I'm a UK-based Game-Developer, and this is my website. If you check the Dev Blog and Games
+            tabs on the left as well as the cards below, you can find some of my work, and all contact links and my
+            CV are at the bottom of the page. Click <a href="/site/Personal Blog/About Me">here</a> to read more about me.
+        </p>
+        <div class="card-grid">
+            <Card
+                    image = {dogfight}
+                    link = "/site/Dev Blog/Space Dog Fight Game"
+                    title = "Space Dog Fight Game"
+                    description = "A C# OpenGL/TK game with procedurally generated solar systems."
+            />
+            <Card
+                    image = {pipeworks}
+                    link = "/site/Dev Blog/Pipeworks"
+                    title = "Pipeworks"
+                    description = "A Godot tool to create procedural pipes."
+            />
+            <Card
+                    image = {antsim}
+                    link = "/site/Dev Blog/Ant Simulator"
+                    title = "Ant Simulator"
+                    description = "A C++ SFML ant colony simulator, with a pheremone navigation system."
+            />
+            <Card
+                    image = {caravan}
+                    link = "/site/Games/Caravan"
+                    title = "Caravan"
+                    description = "A strategic, arithmetic card game built in Godot."
+            />
         </div>
-        <article>
-            <p>
-                Hi, I'm Will, I'm a UK-based Game-Developer, and this is my website. If you check the Dev Blog and Games
-                tabs on the left as well as the cards below, you can find some of my work, and all contact links and my
-                CV are at the bottom of the page. Click <a href="/site/About Me">here</a> to read more about me.
-            </p>
-            <div class="card-grid">
-                <Card
-                        image = {dogfight}
-                        link = "/site/Dev Blog/Space Dog Fight Game"
-                        title = "Space Dog Fight Game"
-                        description = "A C# OpenGL/TK game with procedurally generated solar systems."
-                />
-                <Card
-                        image = {pipeworks}
-                        link = "/site/Dev Blog/Pipeworks"
-                        title = "Pipeworks"
-                        description = "A Godot tool to create procedural pipes."
-                />
-                <Card
-                        image = {antsim}
-                        link = "/site/Dev Blog/Ant Simulator"
-                        title = "Ant Simulator"
-                        description = "A C++ SFML ant colony simulator, with a pheremone navigation system."
-                />
-                <Card
-                        image = {caravan}
-                        link = "/site/Games/Caravan"
-                        title = "Caravan"
-                        description = "A strategic, arithmetic card game built in Godot."
-                />
-            </div>
-            <hr>
-        </article>
-    </main>
+        <hr>
+    </article>
 </BaseLayout>
 
 <style>

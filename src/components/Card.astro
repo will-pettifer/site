@@ -26,7 +26,7 @@ const { image, link, title, description, alt = "Card image" } = Astro.props;
         border-radius: 0.2em;
         overflow: hidden;
         text-decoration: none;
-        color: inherit;
+        color: var(--subtext-color);
         width: 100%;
     }
 
@@ -48,7 +48,7 @@ const { image, link, title, description, alt = "Card image" } = Astro.props;
         padding: 0.5rem 1rem;
         margin: 0;
         font-size: 1.2em;
-        color: var(--text-pink);
+        color: var(--text-sky);
     }
 
     .card-description {

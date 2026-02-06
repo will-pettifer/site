@@ -9,12 +9,14 @@
     --background-color: #232634;
     --background-color-2: #292c3c;
     --accent-color: #626880;
+    --subtext-color: #949cbb;
     --heading-color: #b5bfe2;
-    --text-color: #a5adce;
+    --text-color: #b5bfe2;
     --text-green: #a6d189;
     --text-teal: #81c8be;
     --text-yellow: #e5c890;
     --text-pink: #f4b8e4;
+    --text-sky: #99d1db;
     --link-color: #f2d5cf;
     --visited-color: #e78284;
     --code-background-color: #292c3c;
@@ -362,6 +364,8 @@ img, image, picture{
 }
 
 .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .katex {
     text-align: center;

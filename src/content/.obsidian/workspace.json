@@ -65,12 +65,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "About Me.md",
+                "file": "Personal Blog/The Cosmological Argument.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "About Me"
+              "title": "The Cosmological Argument"
             }
           }
         ],
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "About Me.md",
+                "file": "Personal Blog/The Cosmological Argument.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of About Me"
+              "title": "Outline of The Cosmological Argument"
             }
           }
         ],
@@ -226,6 +226,7 @@
   "lastOpenFiles": [
     "Personal Blog/The Beauty of Monotheism.md",
     "Personal Blog/The Cosmological Argument.md",
+    "Personal Blog/About Me.md",
     "About Me.md",
     "Dev Blog/Space Dog Fight Game.md",
     "Dev Blog/Ant Simulator.md",
