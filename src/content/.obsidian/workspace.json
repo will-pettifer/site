@@ -65,12 +65,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal Blog/The Cosmological Argument.md",
+                "file": "Dev Blog/Grey Cat Games.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Cosmological Argument"
+              "title": "Grey Cat Games"
             }
           }
         ],
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal Blog/The Cosmological Argument.md",
+                "file": "Dev Blog/Grey Cat Games.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Cosmological Argument"
+              "title": "Outline of Grey Cat Games"
             }
           }
         ],
@@ -224,17 +224,19 @@
   },
   "active": "41596d75359136b0",
   "lastOpenFiles": [
-    "Personal Blog/The Beauty of Monotheism.md",
-    "Personal Blog/The Cosmological Argument.md",
-    "Personal Blog/About Me.md",
-    "About Me.md",
     "Dev Blog/Space Dog Fight Game.md",
+    "Dev Blog/space-dog.png",
+    "Dev Blog/Grey Cat Games.md",
+    "Dev Blog/grey-cat-games-logo.png",
+    "Personal Blog/About Me.md",
+    "Personal Blog/The Cosmological Argument.md",
+    "Personal Blog/The Beauty of Monotheism.md",
+    "About Me.md",
     "Dev Blog/Ant Simulator.md",
     "Dev Blog/space-dog-wide.png",
     "Dev Blog/Screenshot_20260205_133342.png",
     "Dev Blog/space-dog-swarm.png",
     "Dev Blog/Screenshot_20260121_070258.png",
-    "Dev Blog/space-dog.png",
     "Dev Blog/Screenshot_20260205_130431.png",
     "Dev Blog/Pipeworks.md",
     "Untitled.base",
@@ -245,7 +247,6 @@
     "Moral Foundations.md",
     "Games/Platformer.md",
     "Games/Caravan.md",
-    "Dev Blog/pipeworks-bezier.gif",
     "test/Test.md.md",
     "test/Tes.md",
     "CV.md",
@@ -260,8 +261,6 @@
     "test/Test.md copy copy copy copy copy copy copy copy.md",
     "test/Test.md copy copy copy copy copy copy copy.md",
     "test/Test.md copy copy copy copy copy copy.md",
-    "test/Test.md copy copy copy copy copy.md",
-    "test/Test.md copy copy copy.md",
     "1Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md~",
     "Test.md~",
     "Mamae.mp3",
