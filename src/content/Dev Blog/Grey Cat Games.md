@@ -14,4 +14,4 @@ Grey Cat Games Ltd is a company three other developers and I set up. We are curr
 - Creating game assets
 - Implementing those assets in Unity
 
-Assets are primarily made in Blender, and their albedo textures are made in Aseprite to facilitate the low-poly aesthetic.
+Assets are primarily made in Blender, and their albedo textures are made in Aseprite to facilitate the game's low-poly, pixel-art aesthetic.
