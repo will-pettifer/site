@@ -12,53 +12,31 @@ import Footer from "../components/Footer.astro";
     <body>
         <button class="menu-toggle" aria-label="Toggle Sidebar">☰</button>
 
-        <div class="container">
-            <div class="layout">
 
-                <nav class="sidenav">
-                    <div class="sidenav-scroll">
-                        <Sidebar />
-                    </div>
-                </nav>
+        <nav class="sidenav">
+            <Sidebar />
+            <div class="divider">
 
-                <div class="divider">
+                <span class="divider-decor" style="top: 9%;">✿</span>
 
-                    <span class="divider-decor" style="top: -25px;">✿</span>
+                <div class="divider-box"></div>
 
-                    <div class="divider-box"></div>
+                <span class="divider-decor" style="top: 79%;">✿</span>
 
-                    <span class="divider-decor" style="top: calc(100vh * 0.25);">✿</span>
-
-                </div>
-
-                <div class="main-frame">
-                    <div class="main-scroll">
-                        <main>
-                            <slot />
-                        </main>
-
-                        <Footer />
-                    </div>
-                </div>
             </div>
+        </nav>
+
+        <div class="main-frame">
+            <main>
+                <slot />
+                <Footer />
+            </main>
         </div>
+
     </body>
 </html>
 
 <style>
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        background: var(--background-color);
-    }
-
-    .layout {
-        display: flex;
-        justify-content: center;
-        height: 100vh;
-    }
-
     .menu-toggle {
         display: none;
         position: fixed;
@@ -81,27 +59,41 @@ import Footer from "../components/Footer.astro";
     }
 
     .sidenav {
-        flex: 0 0 280px;
-        z-index: 100;
-        position: sticky;
-        direction: rtl;
+        position: fixed;
+        left: calc((100vw - 1130px) / 2);
+        top: 0;
+        width: 280px;
         height: 100vh;
-        overflow: hidden;
+        overflow-y: auto;
+        z-index: 100;
+        direction: rtl;
         background: var(--background-color);
     }
 
-    .sidenav-scroll {
-        padding-top: 90px;
-        height: calc(100vh - 90px);
-        overflow-y: auto;
-        min-height: 0;
+    .main-frame {
+        margin-left: calc(((100vw - 1130px) / 2) + 280px);
+        padding: 0 20px;
     }
-    .sidenav::before {
-        padding-top: 60px;
+
+    main {
+        margin-left: 20px;
+        max-width: 800px;
+    }
+
+    .divider {
+        position: fixed;
+        left: calc(((100vw - 1130px) / 2) + 280px);
+        top: 0;
+        width: 20px;
+        height: 100vh;
+        z-index: 200;
+    }
+
+    .divider::before {
         content: "";
         position: absolute;
-        top: 0;
-        bottom: 0;
+        top: 10%;
+        height: calc(100vh * 0.7);
         right: 0;
         width: 1px;
         background: repeating-linear-gradient(
@@ -113,35 +105,12 @@ import Footer from "../components/Footer.astro";
         );
     }
 
-    .main-frame {
-        top: 0;
-        position: relative;
-        flex: 0 1 800px;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .main-scroll {
-        padding-top: 0;
-        height: 100%;
-        overflow-y: auto;
-        min-height: 0;
-    }
-
-    .divider {
-        z-index: 200;
-        margin: 40px 0 0 0;
-        top: 40px;
-        flex: 0 0 20px;
-        width: 20px;
-        position: sticky;
-        align-self: flex-start;
-    }
-    .divider::before {
+    .divider::after {
         content: "";
         position: absolute;
-        height: calc(100vh * 0.7);
-        right: 0;
+        top: 0;
+        height: 100vh;
+        left: 0;
         width: 1px;
         background: repeating-linear-gradient(
                 to bottom,
@@ -157,55 +126,43 @@ import Footer from "../components/Footer.astro";
         height: calc(100vh * 0.4);
         border-top: 1px dashed var(--accent-color);
         border-bottom: 1px dashed var(--accent-color);
-        top: 35px;
+        top: 20%;
     }
 
     .divider-decor {
+        position: absolute;
         user-select: none;
         left: 0.5em;
-        //font-size: em;
-        position: relative;
     }
 
     /* Tablet/Small Desktop: Nav overlays content */
-    @media (max-width: 1100px) {
+    @media (max-width: 1150px) {
         .menu-toggle {
             display: block;
         }
 
-        .container {
-            max-width: 100%;
-        }
-
-        .layout {
-            justify-content: center;
-            gap: 0;
-        }
-
-        .divider{
+        .divider {
             display: none;
         }
 
         .sidenav {
             position: fixed;
-            top: 40px;
+            left: auto;
             right: 20px;
+            top: 40px;
             height: calc(100vh - 200px);
             width: 280px;
-            padding-top: 0;
             border: 1px solid var(--accent-color);
-            border-right: none;
             border-radius: 0.2em;
-            transform: translateX(+200%);
-        }
-
-        .sidenav-scroll{
-            padding:0;
-            height: 100%;
+            transform: translateX(200%);
         }
 
         .sidenav:not(.collapsed) {
             transform: translateX(0);
+        }
+
+        .main-frame {
+            margin-left: 0;
         }
 
         main {
