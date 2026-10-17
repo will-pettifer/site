@@ -3,8 +3,8 @@ date: 2026-01-27
 draft: false
 order: "2"
 ---
-I come from the West Midlands, and am currently studying Computer Games Technology at the University of Portsmouth. I began learning to code in the spring of 2023, starting out with Unity and C#. While at university, I have completed projects using Unreal Engine, Godot, OpenGL, etc. I have long been interested in games as an emerging art form, and I thoroughly enjoy the challenge and intrigue involved in games programming, from the abstract mathematics to the implementation of specific systems and mechanics.
+I am a master’s student at the University of Warwick, studying Computer Science. I taught myself to code in the summer of 2023, before embarking on a degree in Computer Games Technology. While at university, I completed projects using Unreal Engine, Godot, OpenGL, etc., and I was awarded a First Class Honours degree. I then moved on to a master’s degree in Computer Science, with modules covering maths for computer science, data analytics, and machine learning.
 
-Aside from making games, I enjoy reading books of philosophy, economics, and theology.
+Aside from programming, I enjoy reading books on politics, history, and theology.
 
-![](../portrait.png)
+![](portrait-round.png)

@@ -5,90 +5,80 @@ order: "2002"
 ---
 ![](space-dog-wide.png)
 
->[github.com/will-pettifer/SpaceDogFight](https://github.com/will-pettifer/SpaceDogFight)
+> [GitHub](https://github.com/will-pettifer/SpaceDogFight) · [Play on itch.io](https://will-pettifer.itch.io/space-dog-fight-game)
 >
->[will-pettifer.itch.io/space-dog-fight-game](https://will-pettifer.itch.io/space-dog-fight-game)
->
->- [Placing Planets](#placing-planets)
->- [Sine](#sine)
->- [Vectors and Matrices](#vectors-and-matrices)
->- [Quaternions](#quaternions)
->- [Reflections](#reflections)
+> - [Placing Planets](#placing-planets)
+> - [Sine](#sine)
+> - [Vectors and Matrices](#vectors-and-matrices)
+> - [Quaternions](#quaternions)
+> - [Reflections](#reflections)
 
-This project was made using OpenGL/OpenTK and was written in C#. It includes basic 3D rendering and a physics engine. My aim with this project was to better understand the maths behind games and 3D rendering, so I avoided using external maths libraries. This meant I had to implement vectors, matrices, quaternions, and even my own sine function.
+*Space Dog Fight* is a 3D space combat game in C# with OpenGL/OpenTK. Orbital mechanics, rigid body physics and rendering are all built from scratch. To really understand the maths behind games, I used no external maths libraries, so vectors, matrices, quaternions and even sine are all hand-written:
 
-For this write-up, I have left out the work on implementing OpenTK and the physics engine, because although they represented the bulk of my efforts here, there isn't much to say as my implementations are well known solutions.
+- Stable orbits and binary planets via orbital velocity and barycentre calculations
+- Custom sine/cosine using Bhāskara I's approximation
+- Column-major matrix maths, including 3x3 inversion
+- Quaternion rotation with SLERP
+- Quaternion-to-matrix conversion for the vertex shader's TRS transform
 
 <iframe class="video-container" height="427" src="https://www.youtube.com/embed/eyYFLkHYqUo" title="space-dog-demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ![](space-dog-swarm.png)
 
-## Solar System
-### Placing Planets
-To begin with, planet locations are set by scaling a random direction vector by the incremental distance from the star:
+### Solar System
+#### Placing Planets
+Each planet gets a random direction, scaled by its distance from the star:
 
 ```csharp
 distanceFromSun += Maths.RandomFloat(400f, 700f);
 
-float planetDirectionRad = Maths.RandomFloat(0f, Maths.Tau);  
+float planetDirectionRad = Maths.RandomFloat(0f, Maths.Tau);
 Vec2 planetDirection = new Vec2(Maths.Cos(planetDirectionRad),
-	Maths.Sin(planetDirectionRad));
+    Maths.Sin(planetDirectionRad));
 
 Vec3 planetPosition = new Vec3(planetDirection.X,
-	Maths.RandomFloat(-0.1f,0.1f),
-	planetDirection.Y  
+    Maths.RandomFloat(-0.1f, 0.1f),
+    planetDirection.Y
     ) * distanceFromSun;
 ```
 
-Then, in order to maintain semi-stable orbits, the correct velocities need to be set. For solo planets this is very simple, as orbital velocity is just:
+For a solo planet, a stable orbit just needs the right velocity:
 
 $$
 v=\sqrt{\frac{G \cdot M}{r}}
 $$
 
-However, for moons and binary planets, they need to be made to orbit each other as well as the star. This means that the orbital velocity around the sun needs to be calculated for their combined mass, and using the barycentre, which is the centre of mass of the two planets. Then, the velocities are calculated using:
+Binary planets and moons are trickier: they orbit each other *and* the star. The pair orbits the star at their combined mass, and each body orbits the barycentre (their centre of mass):
 
 $$
 v_A = \sqrt{\frac{G \cdot M_B \cdot r_A}{d^2}}
 $$
 
-Or in code:
+In code:
+
 ```csharp
-float planetARadius = Maths.RandomFloat(3f, 40f);  
-float planetBRadius = Maths.RandomFloat(3f, 40f);  
-  
-Planet planetA = new Planet(planetARadius);  
-Planet planetB = new Planet(planetBRadius);  
-  
-float distance = planetARadius + planetBRadius + Maths.RandomFloat(5f, 20f);  
-  
-float baryDistanceA = planetB.GetMass() / (planetB.GetMass() + planetA.GetMass()) * distance;  
-float baryDistanceB = planetA.GetMass() / (planetA.GetMass() + planetB.GetMass()) * distance;  
-  
-planetA.Position = planetPosition + new Vec3(baryDistanceA, 0, 0);  
-planetB.Position = planetPosition - new Vec3(baryDistanceB, 0, 0);  
-  
-float binaryVelocityA = MathF.Sqrt(  
-    Scene.G * planetB.GetMass() / (distance * distance) * baryDistanceA);  
-float binaryVelocityB = MathF.Sqrt(  
-    Scene.G * planetA.GetMass() / (distance * distance) * baryDistanceB);  
-  
-planetA.Velocity = new Vec3(0, 0, -binaryVelocityA);  
-planetB.Velocity = new Vec3(0, 0, binaryVelocityB);  
-  
-orbitalVelocity = MathF.Sqrt(Scene.G * sun.GetMass() / distanceFromSun);  
-orbitalDirection = new Vec3(  
-    Maths.RotateVector(planetDirection, 90f).X,  
-    0,  
-    Maths.RotateVector(planetDirection, 90f).Y);  
-  
-planetA.Velocity += orbitalDirection * orbitalVelocity;  
+float baryDistanceA = planetB.GetMass() / (planetB.GetMass() + planetA.GetMass()) * distance;
+float baryDistanceB = planetA.GetMass() / (planetA.GetMass() + planetB.GetMass()) * distance;
+
+planetA.Position = planetPosition + new Vec3(baryDistanceA, 0, 0);
+planetB.Position = planetPosition - new Vec3(baryDistanceB, 0, 0);
+
+float binaryVelocityA = MathF.Sqrt(
+    Scene.G * planetB.GetMass() / (distance * distance) * baryDistanceA);
+float binaryVelocityB = MathF.Sqrt(
+    Scene.G * planetA.GetMass() / (distance * distance) * baryDistanceB);
+
+planetA.Velocity = new Vec3(0, 0, -binaryVelocityA);
+planetB.Velocity = new Vec3(0, 0, binaryVelocityB);
+
+// then add the pair's orbital velocity around the star
+planetA.Velocity += orbitalDirection * orbitalVelocity;
 planetB.Velocity += orbitalDirection * orbitalVelocity;
 ```
 
-## Maths
-### Sine
-I reviewed a few different options for this, such as a Taylor series or a CORDIC algorithm, but in the end I decided this would be the simplest. I used Bhāskara I's sine approximation, which is a really simple formula:
+### Maths
+#### Sine
+I considered Taylor series and CORDIC, but went with Bhāskara I's approximation as the simplest option:
 
 $$
 sin(x)\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}
@@ -100,11 +90,11 @@ $$
 cos(y)\approx\frac{\pi^2-4y^2}{\pi^2+y^2}
 $$
 
-This produces this graph, where blue is $cos(x)$, red is the formula:
+Blue is $cos(x)$, red is the formula:
 
 ![](space-dog-sine-graph.png)
 
-Which can then be translated to account for the lack of repetition in the curve:
+The curve doesn't repeat on its own, so the input is wrapped and mirrored into range:
 
 ```csharp
 public static float Sin(float rad) => Cos(rad - TauOver4);
@@ -112,7 +102,7 @@ public static float Cos(float rad)
 {
     rad %= Tau;
     rad = Abs(rad);
-    
+
     int sign = 1;
     switch (rad)
     {
@@ -134,8 +124,8 @@ public static float Cos(float rad)
 }
 ```
 
-### Vectors and Matrices
-I decided to store matrices by their columns rather than by their rows:
+#### Vectors and Matrices
+Matrices are stored by column, not row:
 
 ```csharp
 public class Mat4
@@ -145,7 +135,7 @@ public class Mat4
 }
 ```
 
-This made the multiplication very simple:
+This makes multiplication trivial:
 
 ```csharp
 public static Mat3 operator *(Mat3 b, Mat3 a)
@@ -154,75 +144,34 @@ public static Vec3 operator *(Vec3 v, Mat3 m)
     => v.X * m.C0 + v.Y * m.C1 + v.Z * m.C2;
 ```
 
-I also implemented a function to invert 3x3 matrices by finding the determinant of the minor of each element, changing the signs, transposing it, and then dividing by the determinant:
+I also wrote 3x3 inversion: take the determinant of each element's minor, flip the signs, transpose, and divide by the determinant.
 
 ```csharp
 public Mat3 Inverse()
 {
-    float[,] matTemp =
-    {
-        { C0.X, C0.Y, C0.Z },
-        { C1.X, C1.Y, C1.Z },
-        { C2.X, C2.Y, C2.Z }
-    };
-    float[,] result =
-    {
-        { 0, 0, 0 },
-        { 0, 0, 0 },
-        { 0, 0, 0 }
-    };
+    // build matrix of minors
     for (int c = 0; c < 3; c++)
-    {
         for (int r = 0; r < 3; r++)
-        {
             result[c, r] = Minor(matTemp, c, r);
-        }
-    }
-    
+
     Mat3 matResult = new(result);
     matResult.C0.Y *= -1;
     matResult.C1.X *= -1;
     matResult.C1.Z *= -1;
     matResult.C2.Y *= -1;
-    
+
     matResult = matResult.Transpose();
     return matResult / Determinant();
 }
-
-public float Minor(float[,] mat, int c, int r)
-{
-    float[,] result = { { 1, 0 }, { 0, 1 } };
-    int xx = 0;
-    for (int col = 0; col < 3; col++)
-    {
-        if (col == c)
-        {
-            continue;
-        }
-        int yy = 0;
-        for (int row = 0; row < 3; row++)
-        {
-            if (row == r)
-            {
-                continue;
-            }
-            result[xx, yy] = mat[col, row];
-            yy++; 
-        }
-
-        xx++;
-    }
-    return new Mat2(result).Determinant();
-}
 ```
 
-I also coded each part of the TRS matrix which is fed into the vertex shader:
+Each part of the TRS matrix is built by hand and fed to the vertex shader:
 
 ```csharp
 Shader0.SetMatrix4("model", translation * rotation * scale);
 ```
 
-For rotation,  I stored rotation on `Body` as a quaternion, and then converted it into a matrix with the formula:
+Rotation lives on each `Body` as a quaternion, converted to a matrix with:
 
 $$
 R(q) =
@@ -237,7 +186,7 @@ $$
 public static Mat4 Rotation(Quaternion q)
 {
     q = q.Normalised();
-    float ySqr2 = 2 *  q.V.Y * q.V.Y;
+    float ySqr2 = 2 * q.V.Y * q.V.Y;
     float xSqr2 = 2 * q.V.X * q.V.X;
     float zSqr2 = 2 * q.V.Z * q.V.Z;
     float xy2 = 2 * q.V.X * q.V.Y;
@@ -246,57 +195,37 @@ public static Mat4 Rotation(Quaternion q)
     float wy2 = 2 * q.W * q.V.Y;
     float yz2 = 2 * q.V.Y * q.V.Z;
     float wx2 = 2 * q.W * q.V.X;
-    
+
     return new(
         1f - (ySqr2 + zSqr2), xy2 + wz2, xz2 - wy2, 0f,
         xy2 - wz2, 1 - (xSqr2 + zSqr2), yz2 + wx2, 0f,
         xz2 + wy2, yz2 - wx2, 1 - (xSqr2 + ySqr2), 0f,
         0f, 0f, 0f, 1f
     );
-} 
+}
 ```
 
-### Quaternions
-I decided to use quaternions to represent rotation because they are faster and more reliable. It also made implementing a SLERP really easy:
+#### Quaternions
+Quaternions are faster and more reliable than Euler angles, and they make SLERP easy:
 
 ```csharp
 public static Quaternion Slerp(Quaternion q1, Quaternion q2, float t)
 {
-    if (q1.MagnitudeSquared() == 0.0f)
-    {
-        if (q2.MagnitudeSquared() == 0.0f)
-        {
-            return Identity;
-        }
-    
-        return q2;
-    }
-    
-    if (q2.MagnitudeSquared() == 0.0f)
-    {
-        return q1;
-    }
-    
+    // ...handle zero-magnitude and identical quaternions...
+
     var cosHalfAngle = Dot(q1, q2);
-    
-    if (cosHalfAngle >= 1.0f || cosHalfAngle <= -1.0f)
-    {
-        return q1;
-    }
-    
+
     if (cosHalfAngle < 0.0f)
     {
         q2 *= -1;
         cosHalfAngle = -cosHalfAngle;
     }
-    
-    float blendA;
-    float blendB;
+
+    float blendA, blendB;
     if (cosHalfAngle < 0.99f)
     {
         float halfAngle = MathF.Acos(cosHalfAngle);
-        float sinHalfAngle = MathF.Sin(halfAngle);
-        float oneOverSinHalfAngle = 1.0f / sinHalfAngle;
+        float oneOverSinHalfAngle = 1.0f / MathF.Sin(halfAngle);
         blendA = MathF.Sin(halfAngle * (1.0f - t)) * oneOverSinHalfAngle;
         blendB = MathF.Sin(halfAngle * t) * oneOverSinHalfAngle;
     }
@@ -305,18 +234,12 @@ public static Quaternion Slerp(Quaternion q1, Quaternion q2, float t)
         blendA = 1.0f - t;
         blendB = t;
     }
-    
-    Quaternion result = q1 * blendA + q2 * blendB;
-    if (result.MagnitudeSquared() > 0.0f)
-    {
-        return result.Normalised();
-    }
-    
-    return Identity;
+
+    return (q1 * blendA + q2 * blendB).Normalised();
 }
 ```
 
-To get the enemies to point towards the player, I get the vector between them, normalise it, cross it with $\hat{j}$ to generate a right vector, then a new up vector from those. These then become the columns of a matrix, which is converted into the quaternion to be SLERP-ed with the current rotation:
+To aim enemies at the player, I normalise the vector between them, cross it with $\hat{j}$ for a right vector, then cross again for a new up vector. Those become the columns of a matrix, which is converted to a quaternion and SLERPed with the current rotation:
 
 ```csharp
 public Quaternion ToQuat()
@@ -330,4 +253,4 @@ public Quaternion ToQuat()
 ```
 
 ### Reflections
-I have learned more on this project than any other since I started learning how to code in the spring of 2023. Building a physics engine and 3D renderer from the ground up covers so many areas. I had to learn some linear algebra, quaternions, collisions, rigid body physics, shaders, the graphics pipeline, etc. All of these areas are foundational in the industry, and while I have a lot left to learn, I hope that this has given me a strong foundation.
+I've learned more from this project than any other since I started coding in spring 2023. Building a physics engine and 3D renderer from scratch meant tackling linear algebra, quaternions, collisions, rigid body physics, shaders and the graphics pipeline. These are foundational in the industry, and while I have plenty left to learn, this gives me a strong base.

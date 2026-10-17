@@ -25,7 +25,7 @@ posts.forEach(post => {
 
 
 <div class="sidebar-content">
-    <h3>
+    <h4>
         <a href="/site/" style="color: var(--text-yellow)">
             Will-Pettifer
             <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32"
@@ -37,7 +37,7 @@ posts.forEach(post => {
                 <title>Site</title>
             </svg>
         </a>
-    </h3>
+    </h4>
     <br/>
     <ul class="sidebar-ul">
         {Object.entries(postsByCategory).map(([category, items]) => (
@@ -69,6 +69,7 @@ posts.forEach(post => {
         padding: 1em;
         text-align: right;
         word-spacing: normal;
+        font-size: 1.1em;
     }
 
     .sidebar-ul{
@@ -106,7 +107,6 @@ posts.forEach(post => {
         display: none;
         list-style: none;
         font-weight: 400;
-        font-size: 0.9em;
         font-family: var(--font-code), monospace;
         font-style: italic;
         padding: 0;

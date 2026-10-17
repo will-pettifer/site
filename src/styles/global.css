@@ -2,16 +2,17 @@
 
 :root {
     --width: 760px;
-    --font-main: AlegreyaSans, sans-serif;
-    --font-secondary: Alegreya, serif;
+    --font-main: Libron, serif;
+    --font-secondary: Libron, serif;
     --font-code: UbuntuMono, monospace;
-    --font-scale: 1.3em;
+    --font-scale: 1.1em;
     --background-color: #232634;
     --background-color-2: #292c3c;
     --accent-color: #626880;
     --subtext-color: #949cbb;
     --heading-color: #b5bfe2;
-    --text-color: #b5bfe2;
+    --text-color: #949cbb;
+    /*--text-color: #b5bfe2;*/
     --text-green: #a6d189;
     --text-teal: #81c8be;
     --text-yellow: #e5c890;
@@ -62,6 +63,35 @@
 @font-face {
     font-family: 'Alegreya';
     src: url('/site/fonts/Alegreya-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Libron';
+    src: url('/site/fonts/Libron-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Libron';
+    src: url('/site/fonts/Libron-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Libron';
+    src: url('/site/fonts/Libron-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Libron';
+    src: url('/site/fonts/Libron-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -177,7 +207,6 @@ body {
     text-align: left;
     background-color: var(--background-color);
     word-wrap: break-word;
-    word-spacing: 0.1em;
     overflow-wrap: break-word;
     line-height: 1.6;
     color: var(--text-color);
@@ -283,7 +312,6 @@ code{
     background-color: var(--code-background-color);
     color: var(--code-color);
     font-family: var(--font-code), monospace;
-    font-size: 0.8em;
     word-spacing: normal;
 }
 .astro-code{

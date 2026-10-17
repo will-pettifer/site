@@ -65,12 +65,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev Blog/Grey Cat Games.md",
+                "file": "Dev Blog/Caravan Blog.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Grey Cat Games"
+              "title": "Caravan Blog"
             }
           }
         ],
@@ -94,7 +94,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -195,13 +197,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dev Blog/Grey Cat Games.md",
+                "file": "Dev Blog/Caravan Blog.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Grey Cat Games"
+              "title": "Outline"
             }
           }
         ],
@@ -224,32 +226,35 @@
   },
   "active": "41596d75359136b0",
   "lastOpenFiles": [
-    "Dev Blog/Space Dog Fight Game.md",
-    "Dev Blog/space-dog.png",
-    "Dev Blog/Grey Cat Games.md",
-    "Dev Blog/grey-cat-games-logo.png",
-    "Personal Blog/About Me.md",
+    "Dev Blog/Pine Engine.md",
+    "Dev Blog/Pine Engine.md~",
+    "Dev Blog/background.png",
+    "CV.md",
     "Personal Blog/The Cosmological Argument.md",
     "Personal Blog/The Beauty of Monotheism.md",
-    "About Me.md",
+    "Personal Blog/About Me.md",
+    "Dev Blog/Space Dog Fight Game.md",
+    "Dev Blog/Pipeworks.md",
+    "Dev Blog/Grey Cat Games.md",
     "Dev Blog/Ant Simulator.md",
+    "Dev Blog/Caravan Blog.md",
+    "Games/Platformer.md",
+    "Dev Blog/Making a Website.md",
+    "Games/Caravan.md",
+    "Games/caravan-1.png",
+    "Personal Blog/portrait-round.png",
+    "Dev Blog/grey-cat-games-logo.png",
+    "Dev Blog/space-dog.png",
+    "About Me.md",
     "Dev Blog/space-dog-wide.png",
     "Dev Blog/Screenshot_20260205_133342.png",
     "Dev Blog/space-dog-swarm.png",
     "Dev Blog/Screenshot_20260121_070258.png",
     "Dev Blog/Screenshot_20260205_130431.png",
-    "Dev Blog/Pipeworks.md",
     "Untitled.base",
-    "Dev Blog/Making a Website.md",
-    "portrait.png",
-    "portrait-1.png",
-    "portrait-small.png",
     "Moral Foundations.md",
-    "Games/Platformer.md",
-    "Games/Caravan.md",
     "test/Test.md.md",
     "test/Tes.md",
-    "CV.md",
     "Dev Blog/Space Dog Fight Game.md~",
     "test/Test.md",
     "test/Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md",
@@ -259,15 +264,12 @@
     "test/Test.md copy copy copy copy copy copy copy copy copy copy copy copy.md",
     "test/Test.md copy copy copy copy copy copy copy copy copy copy.md",
     "test/Test.md copy copy copy copy copy copy copy copy.md",
-    "test/Test.md copy copy copy copy copy copy copy.md",
-    "test/Test.md copy copy copy copy copy copy.md",
     "1Test.md copy copy copy copy copy copy copy copy copy copy copy copy copy copy.md~",
     "Test.md~",
     "Mamae.mp3",
     "2025-07-17 16-39-54.mp4",
     "Writing",
     "Personal Blog",
-    "Test",
-    "Dev Blog"
+    "Test"
   ]
 }
