@@ -65,12 +65,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev Blog/Caravan Blog.md",
+                "file": "Personal Blog/The Cosmological Argument.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Caravan Blog"
+              "title": "The Cosmological Argument"
             }
           }
         ],
@@ -197,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dev Blog/Caravan Blog.md",
+                "file": "Personal Blog/The Cosmological Argument.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -226,6 +226,7 @@
   },
   "active": "41596d75359136b0",
   "lastOpenFiles": [
+    "Dev Blog/Caravan Blog.md",
     "Dev Blog/Pine Engine.md",
     "Dev Blog/Pine Engine.md~",
     "Dev Blog/background.png",
@@ -237,7 +238,6 @@
     "Dev Blog/Pipeworks.md",
     "Dev Blog/Grey Cat Games.md",
     "Dev Blog/Ant Simulator.md",
-    "Dev Blog/Caravan Blog.md",
     "Games/Platformer.md",
     "Dev Blog/Making a Website.md",
     "Games/Caravan.md",

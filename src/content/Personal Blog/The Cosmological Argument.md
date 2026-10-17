@@ -1,6 +1,7 @@
 ---
 date: 2025-07-08
 order: "1"
+draft: true
 ---
 ![](the-cosmo-1.png)
 
