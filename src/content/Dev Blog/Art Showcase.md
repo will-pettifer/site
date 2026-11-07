@@ -20,4 +20,4 @@ This 3D scene is part of our upcoming title Spindraw. My work includes all 3D as
 ![](art-show-landscape.png)
 
 ### Concept Art
-![](tunnel-world-empty.png)
+![](art-show-concept.png)
